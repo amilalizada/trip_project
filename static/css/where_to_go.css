@@ -1,0 +1,630 @@
+.background-filter{
+    background-image: url(/media/images/background-filter.png)
+}
+
+.place-filter-input{
+    border-style: none;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+}
+
+.place-search-input{
+    padding: 15px 0px;
+    justify-content: center;
+}
+
+.place-info{
+    padding:20px 0px;
+    border-bottom:1px solid rgba(0,0,0,.12);
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.place-find{
+    font-weight: 500;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 0;
+    border-style: none;
+    background: #dc3545;
+    color: white;
+    border-radius: 0px 3px 3px 0px;
+    transition: 0.3s ease all;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.place-find:hover{
+    background-color: #b8222d;
+}
+
+.search-inputt{
+    border-radius: 3px 0px 0px 3px;
+}
+
+.place-options{
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #2d333f;
+}
+.place-list-option{
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #2d333f;
+}
+
+.place-dropdown-featured{
+    border-style: none;
+    background: white;
+    padding: 0.2rem 6.5rem 0.2rem 0.5rem;
+    font-size: 12px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.place-dropdown{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 2px solid rgba(0,0,0,.12);
+}
+
+.place-dropdown:hover{
+    border: 2px solid #da3743;
+}
+
+.place-dropdown:focus{
+    outline: #4a6fde solid 2px;
+}
+
+.dropdown-list{
+    position: absolute;
+    list-style: none;
+    top: 45px;
+    width: 215px;
+    background: #f1f0ef;
+    margin-left: -1px;
+    padding: 0px;
+    cursor: pointer;
+    border: 2px solid rgba(0,0,0,.12);
+    visibility: hidden;
+    z-index: 2;
+}
+
+.place-dropdown:focus + .dropdown-list{
+    visibility: visible !important;
+}
+
+.dropdown-list li{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 10px;
+}
+.dropdown-list li:hover{
+    background-color: #da3743;
+    color: #fff;
+}
+
+.place-name{
+    color: #247f9e;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.body-card{
+    padding: 0px 10px !important;
+}
+
+.place-name:hover{
+    text-decoration: underline !important; 
+}
+
+.place-feedback{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.place-feedback-number{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.place-city-name{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.place-card{
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    padding: 20px 0px;
+}
+
+.place-description{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.place-card-img{
+    width: 205px;
+    height: 205px;
+}
+
+.place-info{
+    
+    background: #dc3545;
+    font-weight: 500;
+    vertical-align: middle;
+    line-height: 20px;
+    border: 2px solid rgba(0,0,0,.12);
+    padding: 5px 0px;
+    border-radius: 3px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s ease all;
+}
+
+.place-info:hover{
+    background-color: #b8222d;
+}
+
+.place-info a{
+    font-size: 14px;
+    color: white;
+}
+.place-info a:hover{
+    text-decoration: none !important;
+}
+
+.available-table{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.count-places{
+    font-size: .9rem;
+    line-height: 1.3rem;
+    font-weight: 400;
+}
+.restaurant-cover-photo{
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media only screen and (max-width: 1040px) {
+    .place-card-img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .place-card-img{
+        width: 195px;
+        height: 195px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .place-card-img{
+        width: 191px;
+        height: 191px;
+    }
+}
+
+@media only screen and (max-width: 975px) {
+    .place-card-img{
+        width: 186px;
+        height: 186px;
+    }
+}
+
+@media only screen and (max-width: 955px) {
+    .place-card-img{
+        width: 181px;
+        height: 181px;
+    }
+}
+
+@media only screen and (max-width: 935px) {
+    .place-card-img{
+        width: 178px;
+        height: 178px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .place-card-img{
+        width: 174px;
+        height: 174px;
+    }
+}
+@media only screen and (max-width: 920px) {
+    .place-card-img{
+        width: 171px;
+        height: 171px;
+    }
+}
+@media only screen and (max-width: 910px) {
+    .place-card-img{
+        width: 169px;
+        height: 169px;
+    }
+}
+@media only screen and (max-width: 890px) {
+    .place-card-img{
+        width: 165px;
+        height: 165px;
+    }
+}
+@media only screen and (max-width: 870px) {
+    .place-card-img{
+        width: 163px;
+        height: 163px;
+    }
+}
+@media only screen and (max-width: 840px) {
+    .place-card-img{
+        width: 160px;
+        height: 160px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .place-card-img{
+        width: 196px;
+        height: 196px;
+    }
+    .restaurant-cover-photo{
+        height: 110px !important;
+    }
+}
+@media only screen and (max-width: 672px) {
+    .place-card-img{
+        width: 190px;
+        height: 190px;
+    }
+}
+@media only screen and (max-width: 662px) {
+    .place-card-img{
+        width: 187px;
+        height: 187px;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .place-card-img{
+        width: 181px;
+        height: 181px;
+    }
+}
+@media only screen and (max-width: 620px) {
+    .place-card-img{
+        width: 176px;
+        height: 176px;
+    }
+}
+@media only screen and (max-width: 605px) {
+    .place-card-img{
+        width: 171px;
+        height: 171px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .place-card-img{
+        width: 164px;
+        height: 164px;
+    }
+}
+@media only screen and (max-width: 555px) {
+    .place-card-img{
+        width: 157px;
+        height: 157px;
+    }
+}
+@media only screen and (max-width: 535px) {
+    .place-card-img{
+        width: 152px;
+        height: 152px;
+    }
+}
+@media only screen and (max-width: 515px) {
+    .place-card-img{
+        width: 147px;
+        height: 147px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .place-card-img{
+        width: 144px;
+        height: 144px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .place-card-img{
+        width: 140px;
+        height: 140px;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .place-card-img{
+        width: 134px;
+        height: 134px;
+    }
+}
+@media only screen and (max-width: 440px) {
+    .place-card-img{
+        width: 129px;
+        height: 129px;
+    }
+}
+@media only screen and (max-width: 405px) {
+    .place-card-img{
+        width: 123px;
+        height: 123px;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .place-card-img{
+        width: 116px;
+        height: 116px;
+    }
+}
+@media only screen and (max-width: 365px) {
+    .place-card-img{
+        width: 111px;
+        height: 111px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .place-card-img{
+        width: 108px;
+        height: 108px;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .place-card-img{
+        width: 105px;
+        height: 105px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .place-card-img{
+        width: 102px;
+        height: 102px;
+    }
+}
+@media only screen and (max-width: 315px) {
+    .place-card-img{
+        width: 98px;
+        height: 98px;
+    }
+}
+@media only screen and (max-width: 290px) {
+    .place-card-img{
+        width: 93px;
+        height: 93px;
+    }
+}
+@media only screen and (max-width: 275px) {
+    .place-card-img{
+        width: 87px;
+        height: 87px;
+    }
+}
+@media only screen and (max-width: 270px) {
+    .place-card-img{
+        width: 84px;
+        height: 84px;
+    }
+}
+@media only screen and (max-width: 260px) {
+    .place-card-img{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media only screen and (max-width: 250px) {
+    .place-card-img{
+        width: 77px;
+        height: 77px;
+    }
+}
+@media only screen and (max-width: 240px) {
+    .place-card-img{
+        width: 74px;
+        height: 74px;
+    }
+}
+@media only screen and (max-width: 230px) {
+    .place-card-img{
+        width: 71px;
+        height: 71px;
+    }
+}
+@media only screen and (max-width: 215px) {
+    .place-card-img{
+        width: 66px;
+        height: 66px;
+    }
+}
+@media only screen and (max-width: 200px) {
+    .place-card-img{
+        width: 64px;
+        height: 64px;
+    }
+}
+
+
+@media only screen and (max-width: 766px) {
+    .search-inputt{
+        padding:10px;
+        border-radius: 3px 3px 0px 0px;
+    }
+    .place-find{
+        width: 100%;
+        border-radius:0px 0px 3px 3px;
+    }
+  }
+
+@media only screen and (max-width: 434px) {
+   .place-filter-input{
+    width: 80%;
+}
+  }
+
+@media only screen and (max-width: 418px) {
+    .available-table{
+        display: block;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        height: 75px !important;
+        margin-top: 20px !important;
+   }
+   .dropdown-list{
+       top: 61px;
+   }
+   .count-places{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding: 8px 8px 0 0;
+        text-transform: none;
+        font-weight: 500;
+   }
+   .place-dropdown-featured{
+        padding: 0.3rem 6.5rem 0.3rem 0.5rem;
+   }
+    
+   }
+
+.place_container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and  (min-width: 1200px){
+    .place_container{
+        max-width: 1140px;
+    }
+    .place-search-input{
+        padding: 15px 40px;
+    }
+} 
+.special-border{
+    border-bottom: 1px solid #ebebeb;
+}
+.option-padding{
+    padding:15px 12px;
+}
+.option-tables{
+    position: absolute;
+    top: 52px;
+    left: 146px;
+    z-index: 5;
+    background: white;
+}
+.all-options-in-table{
+    width: 250px;
+    padding-left: 5px;
+    box-shadow: 1px 1px 10px 6px #ededed;
+    border-radius: 5px;
+    position: relative;
+}
+.triangle-table{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    position: absolute;
+    top: -7px;
+    left: 5px;
+  }
+#dining-option-table{
+   
+}
+
+.custom-checkbox{
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 2px solid #2d333f;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 6px !important;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    height: 1px;
+    opacity: 0.8;
+}
+.custom-checkbox:active, .custom-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.custom-checkbox:checked {
+	background-color: #da3743;
+    border: 1px solid #da3743;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: white;
+}
+.custom-checkbox:checked:after {
+	content: '\2714';
+    font-size: 11px;
+    position: absolute;
+    top: -3px;
+    left: 2px;
+    color: white;
+}
+.regular-radio {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid black;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 7px !important;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    height: 4px;
+    border: 2px solid #565b65;
+}
+
+.regular-radio:checked:after {
+    content: ' ';
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    position: absolute;
+    top: 5px;
+    background: white;
+    text-shadow: 0px;
+    left: 5px;
+    font-size: 5px;
+}
+
+.regular-radio:checked {
+    background-color: #da3743;
+    color: #99a1a7;
+    border: 1px solid #adb8c0;
+    padding: 8px !important;
+}
+
+.regular-radio:active, .regular-radio:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
+
+

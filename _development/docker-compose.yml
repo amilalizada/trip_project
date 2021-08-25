@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ../postgresdb/:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: 'trip_db_name'
+      POSTGRES_USER: 'trip_user_name'
+      POSTGRES_PASSWORD: '123'
+

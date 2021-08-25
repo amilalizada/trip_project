@@ -1,0 +1,197 @@
+[
+    {
+        "model": "Tours.tours",
+        "pk": 14,
+        "fields": {
+            "owner": [
+                "amil"
+            ],
+            "name": "Qebele tur",
+            "trip_route": "baki-qebele-baki",
+            "trip_time": "sentyabr 10",
+            "trip_time_count": 10,
+            "trip_transport": "at araba",
+            "price": "12.00",
+            "main_image": "images/tourimages/4e6d7291fc032e4ed3782073ef0c84a9_TAJ77HC.jpg",
+            "strat": "Baki",
+            "finish": "Sumqayit",
+            "min_size": 2,
+            "max_size": 20,
+            "min_age": 14,
+            "slug": "qebele-tur-20200916-153548",
+            "created_at": "2020-09-16T11:35:48.202Z",
+            "updated_at": "2020-09-16T11:35:48.202Z",
+            "is_published": true,
+            "city": []
+        }
+    },
+    {
+        "model": "Tours.tourimages",
+        "pk": 40,
+        "fields": {
+            "tours": 14,
+            "images": "images/tours/tourimages/4e6d7291fc032e4ed3782073ef0c84a9_vDoxA0M.jpg",
+            "created_at": "2020-09-16T11:35:48.207Z",
+            "updated_at": "2020-09-16T11:35:48.207Z"
+        }
+    },
+    {
+        "model": "Tours.tourimages",
+        "pk": 41,
+        "fields": {
+            "tours": 14,
+            "images": "images/tours/tourimages/4e6d7291fc032e4ed3782073ef0c84a9_TthJiOk.jpg",
+            "created_at": "2020-09-16T11:35:48.209Z",
+            "updated_at": "2020-09-16T11:35:48.209Z"
+        }
+    },
+    {
+        "model": "Tours.tourimages",
+        "pk": 42,
+        "fields": {
+            "tours": 14,
+            "images": "images/tours/tourimages/4e6d7291fc032e4ed3782073ef0c84a9_BkN40XB.jpg",
+            "created_at": "2020-09-16T11:35:48.213Z",
+            "updated_at": "2020-09-16T11:35:48.213Z"
+        }
+    },
+    {
+        "model": "Tours.inclusion",
+        "pk": 2,
+        "fields": {
+            "tours": 14,
+            "meals": "2 seher yemeyi",
+            "transport": "Sprinter",
+            "acommodation": "yoxdur",
+            "activites": "Eylenceler"
+        }
+    },
+    {
+        "model": "Tours.whyyoulove",
+        "pk": 5,
+        "fields": {
+            "tours": 14,
+            "reasons": "cascascasc"
+        }
+    },
+    {
+        "model": "Tours.whyyoulove",
+        "pk": 6,
+        "fields": {
+            "tours": 14,
+            "reasons": "cascascascsacsacascascascascascassac"
+        }
+    },
+    {
+        "model": "Tours.whyyoulove",
+        "pk": 7,
+        "fields": {
+            "tours": 14,
+            "reasons": "cascascascascascsa"
+        }
+    },
+    {
+        "model": "Tours.whyyoulove",
+        "pk": 8,
+        "fields": {
+            "tours": 14,
+            "reasons": "cascascsacsacsacsacsacascas"
+        }
+    },
+    {
+        "model": "Tours.rightroryou",
+        "pk": 3,
+        "fields": {
+            "tours": 14,
+            "will_do": "Bele eliecik ele eliecik"
+        }
+    },
+    {
+        "model": "Tours.rightroryou",
+        "pk": 4,
+        "fields": {
+            "tours": 14,
+            "will_do": "Bele eliecik ele eliecik"
+        }
+    },
+    {
+        "model": "Tours.rightroryou",
+        "pk": 5,
+        "fields": {
+            "tours": 14,
+            "will_do": "Bele eliecik ele eliecik"
+        }
+    },
+    {
+        "model": "Tours.rightroryou",
+        "pk": 6,
+        "fields": {
+            "tours": 14,
+            "will_do": "Bele eliecik ele eliecik"
+        }
+    },
+    {
+        "model": "Tours.importantnotes",
+        "pk": 1,
+        "fields": {
+            "tours": 14,
+            "notes": "asdfghjkl,mnbvcdfrtyuiol"
+        }
+    },
+    {
+        "model": "Tours.importantnotes",
+        "pk": 2,
+        "fields": {
+            "tours": 14,
+            "notes": "asdfghjkl,mnbvcdfrtyuiol"
+        }
+    },
+    {
+        "model": "Tours.importantnotes",
+        "pk": 3,
+        "fields": {
+            "tours": 14,
+            "notes": "asdfghjkl,mnbvcdfrtyuiol"
+        }
+    },
+    {
+        "model": "Tours.importantnotes",
+        "pk": 4,
+        "fields": {
+            "tours": 14,
+            "notes": "asdfghjkl,mnbvcdfrtyuiol"
+        }
+    },
+    {
+        "model": "Tours.activites",
+        "pk": 5,
+        "fields": {
+            "inclusion": 2,
+            "avtivity": "asdsasfczsbxdcncgvbnm,"
+        }
+    },
+    {
+        "model": "Tours.activites",
+        "pk": 6,
+        "fields": {
+            "inclusion": 2,
+            "avtivity": "ascsacvascvasdvasd"
+        }
+    },
+    {
+        "model": "Tours.activites",
+        "pk": 7,
+        "fields": {
+            "inclusion": 2,
+            "avtivity": "cascascasvasdvdsbv"
+        }
+    },
+    {
+        "model": "Tours.activites",
+        "pk": 8,
+        "fields": {
+            "inclusion": 2,
+            "avtivity": "advdav dasv dsavds"
+        }
+    }
+]

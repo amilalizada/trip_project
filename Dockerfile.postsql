@@ -1,0 +1,6 @@
+FROM pyro225/postgresql-32bit
+
+ENV DB_NAME=trip_db_name
+ENV DB_USER=trip_user_name
+ENV DB_PASS=123
+EXPOSE 5432

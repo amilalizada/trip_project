@@ -1,0 +1,801 @@
+{% extends 'base.html' %}
+{% block title %} Places Single Page {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/single-page-place.css' %}">
+<link rel="stylesheet" href="{% static 'css/rtop.videoPlayer.1.0.2.min.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="land-of-fire">
+    <img src="{% static 'images/landoffire.jpg' %}" alt="">
+</div>
+
+<div class="all-photos-page bg-white d-none">
+    <div class="place-container" style="padding: 50px 0px 0px 0px">
+        <div class="row" style="padding: 0px 50px">
+            <div class="close-all-photos">
+                <img src="/static/images/closetable.svg" width="16px" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <img width="100%" height="100%"
+                    src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg" alt="">
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="place-container mt-3">
+    <div class="row bg-white m-0 responsive-place-information">
+        <div class="col-12 d-flex justify-content-between p-0">
+            <div class="single-place-name">Misura</div>
+            <div class="d-flex align-items-center">
+                <a class="d-flex save-button align-items-center">
+                    <div class="heart-img"></div>
+                    <div class="place-save ml-1 d-sm-block d-none">Save</div>
+                </a>
+                <div class="save-share-border ml-2 mr-2 d-sm-block d-none"></div>
+                <a class=" d-flex align-items-center" style="cursor: pointer">
+                    <img src="{% static 'images/share.svg' %}" width="19px" height="18px;" alt="">
+                    <div class="place-share ml-1 d-sm-block d-none">Share</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 p-0">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'images/image-2.svg' %}" alt="">
+                <img src="{% static 'images/image-2.svg' %}" alt="">
+                <img src="{% static 'images/image-2.svg' %}" alt="">
+                <img src="{% static 'images/image-2.svg' %}" alt="">
+                <img src="{% static 'images/image-3.svg' %}" alt="">
+                <div class="single-page-feedback">984 reviews</div>
+                <div class="save-share-border ml-2 mr-2 d-md-block d-none"></div>
+                <div class="d-md-block d-none">
+                    <span class="dotted-border special-font">
+                        <span class="single-page-index">#6</span> of 414 Bar in Dubai</span>
+                </div>
+                <div class="d-md-block d-none save-share-border ml-2 mr-2"></div>
+                <div class="special-font d-md-block d-none" style="opacity: 0.8">$$ - $$$, Bar, International, Pub</div>
+
+            </div>
+        </div>
+        <div class="special-font d-md-none d-block" style="opacity: 0.8">$$ - $$$, Bar, International, Pub</div>
+        <div class="col-12 p-0 d-md-flex d-none">
+            <div class="d-flex align-items-center flex-wrap">
+                <div class="col-12 d-flex p-0">
+                    <div><img src="{% static 'images/pin.svg' %}" width="16px" alt=""></div>
+                    <div class="ml-1">
+                        <span class="dotted-border special-font ">Cluster A, Jumeriah Lakes Towers Movenpick Hotel
+                            Jumeirah
+                            Lakes Towers, Dubai 454439 United Arab Emirates</span>
+                    </div>
+                </div>
+
+
+                <div class="d-none col-12 d-md-flex p-0">
+                    <div>
+                        <img src="{% static 'images/tel.svg' %}" width="18px" alt="">
+                        <span class="dotted-border special-font">+(994)444-44-44</span>
+                    </div>
+                    <div class="save-share-border ml-2 mr-2"></div>
+                    <div>
+                        <img src="{% static 'images/ecommerce.svg' %}" width="16px;" alt="">
+                        <span class="dotted-border special-font">Website</span>
+                    </div>
+                    <div class="save-share-border ml-2 mr-2"></div>
+                    <div>
+                        <img src="{% static 'images/menu.svg' %}" width="16px;" alt="">
+                        <span class="dotted-border special-font">Menu</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class=" col-12" style="padding: 0px 0px 0px 10px">
+            <div style="display: inline-block">
+                <div class="d-flex jquery-effect">
+                    <img src="{% static 'images/opentime.svg' %}" width="16px" alt="">
+                    <div class="ml-1 mr-1">
+                        <span class="dotted-border special-font open-time">
+                            <span class="single-page-index">Open now:</span>
+                            12:00 PM - 01:00 AM</span>
+                    </div>
+                    <img class="img-info" src="{% static 'images/info.svg' %}" width="16px" alt="">
+                </div>
+                <div class="table-place-open-time d-none">
+                    <div class="table-worktime">
+                        <div class="work-hours">
+                            <h2 class="hours">Hours</h2>
+                            <div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Sun</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Mon</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Tue</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Wed</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Thu</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Fri</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Sat</div>
+                                    <div class="col-8 p-0">12:00 PM - 01:00 AM</div>
+                                </div>
+                            </div>
+                            <div class="position-exit-cursor">
+                                <img src="{% static 'images/closetable.svg' %}" width="8px" alt="">
+                            </div>
+                            <div class="triangle-table"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="single-page-background">
+
+    <div class="place-container" style="padding: 20px">
+        <div class="row">
+            <div class="col-md-6 col-sm-9 col-12 auto-video">
+                <div style="height: 100%">
+                    <div style="height: 100%" id="example">
+                        <video src="{% static 'videos/People Being Served their Food and Getting Ready to Eat.mp4' %}"
+                            type="video/mp4" playsinline>
+                            <source
+                                src="{% static 'videos/People Being Served their Food and Getting Ready to Eat.mp4' %}"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-md-block d-none" style="padding: 0px 1px 0px 1px">
+                <div class="h-100">
+                    <img class="img-style" width="100%"
+                        src="https://media-cdn.tripadvisor.com/media/photo-s/1b/4b/bb/6c/the-urban-terrace-tent.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 d-sm-block d-none" style="padding: 0px 15px 0px 1px">
+                <div style="padding-bottom:1px;height:50%;">
+                    <img class="img-style" width="100%"
+                        src="https://media-cdn.tripadvisor.com/media/photo-f/1b/4b/bc/18/home-of-the-helfie.jpg" alt="">
+                </div>
+                <div style="padding-top: 1px;height:50%;">
+                    <img class="img-style" width="100%"
+                        src="https://media-cdn.tripadvisor.com/media/photo-f/18/e5/d9/c3/summer-menu.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12">
+                <div href="" class="all-photos align-items-center d-flex">
+                    <div><i class="fa fa-camera"></i></div>
+                    <div>All photos (302)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 d-flex mobile-contact-info bg-white d-block d-md-none">
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+            <a class="d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+                <img src="{% static 'images/tel.svg' %}" width="22px" alt="">
+                <div>Call</div>
+            </a>
+        </div>
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+            <a class="d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+                <img src="{% static 'images/pin.svg' %}" width="16px" alt="">
+                <div>Map</div>
+            </a>
+        </div>
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+            <a class="d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+                <img src="{% static 'images/menu.svg' %}" width="16px;" alt="">
+                <div>Menu</div>
+            </a>
+        </div>
+
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+            <a class="d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static 'images/ecommerce.svg' %}" width="16px;" alt="">
+                <div>Website</div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="place-container">
+        <div class="mt-2">
+            <div class="row">
+                <div class="col-lg-4 col-12 mb-4">
+                    <div class="for-border">
+                        <div>
+                            <h2 class="m-0 single-page-information-topic">Ratings and reviews</h2>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span style="font-size: 24px;font-weight: 700;">5.0</span>
+                            <span class="ml-1 mr-1" style="margin-bottom: 5px;">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                            </span>
+                            <span class="single-page-feedback">984 reviews</span>
+                        </div>
+                        <div style="line-height: 12px;">
+                            <span>
+                                <span class="single-page-index">#6</span>
+                                <span class="special-font">of 414 Bar in Dubai</span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <span class="single-page-index">#15</span>
+                                <span class="special-font">of 7,673 places in Dubai</span>
+                            </span>
+                        </div>
+                        <div class="mt-3">
+                            <span> <img src="{% static 'images/travel.svg' %}" width="16px" alt=""> </span>
+                            <span class="single-page-index">Travelers' Choice</span>
+                        </div>
+                        <div style="border-bottom:1px solid rgba(0,0,0,.12);margin:45px 0px;"></div>
+                        <div>
+                            <h5 style="font-size: 12px;color: #474747;">RATINGS</h5>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/fruit.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Food</span>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/order.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Service</span>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/wallet.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Value</span>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/candle.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Atmosphere</span>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-2.svg' %}" alt="">
+                                <img src="{% static 'images/image-3.svg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 mb-4">
+                    <div class="for-border">
+                        <div>
+                            <h2 class="m-0 single-page-information-topic">Food and ambience</h2>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="single-page-bar">Bar, Pub, International, Gastropub, Vegetarian Friendly, Vegan
+                                Options</span>
+                        </div>
+                        <div style="line-height: 12px;">
+                            <span>
+                                <img style="margin-bottom: 3px;" src="{% static 'images/quote.svg' %}" width="13px"
+                                    alt="">
+                                <span class="brunch">Christmas</span> <span class="rating-info m-0">brunch</span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <img style="margin-bottom: 3px;" src="{% static 'images/quote.svg' %}" width="13px"
+                                    alt="">
+                                <span class="brunch">Christmas</span> <span class="rating-info m-0">brunch</span>
+                            </span>
+                        </div>
+                        <div style="border-bottom:1px solid rgba(0,0,0,.12);margin:25px 0px;"></div>
+                        <div>
+                            <h5 class="single-page-bar">Special occasions, Romantic, Large groups,
+                                Bar scene</h5>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <span>
+                                <img style="margin-bottom: 3px;" src="{% static 'images/quote.svg' %}" width="13px"
+                                    alt="">
+                                <span class="brunch">Christmas</span> <span class="rating-info m-0">brunch</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 mb-4">
+                    <div class="for-border">
+                        <div>
+                            <h2 class="m-0 single-page-information-topic">Location and contact</h2>
+                        </div>
+                        <div class="mb-3">
+                            <img alt="" class="w-100 rAA8XwlX"
+                                src="https://maps.google.com/maps/api/staticmap?&amp;channel=ta.desktop.place_review&amp;zoom=15&amp;size=347x137&amp;scale=1&amp;client=gme-tripadvisorinc&amp;format=jpg&amp;sensor=false&amp;language=en_US&amp;center=25.066359,55.137562&amp;maptype=roadmap&amp;&amp;markers=icon:http%3A%2F%2Fc1.tacdn.com%2F%2Fimg2%2Fmaps%2Ficons%2Fcomponent_map_pins_v1%2FR_Pin_Small.png|25.066359,55.137562&amp;signature=ezjhMIRKPT5b0EaetyznoTyl9XM=">
+                        </div>
+                        <div class="d-flex" style="line-height: 12px;position:relative">
+                            <img style="position: absolute" src="{% static 'images/pin.svg' %}" width="16px" alt="">
+                            <div class="col-12" style="margin-left: 13px">
+                                <a class="place-location-info"> Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Magni aperiam
+                                    iusto tenetur, dolor illum modi esse a nesciunt asperiores ipsam sed nulla vel ex
+                                    voluptatibus
+                                    nam? Ea distinctio eum animi! </a>
+                            </div>
+
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="col-6 p-0">
+                                <a class="for-cursor ">
+                                    <img src="{% static 'images/ecommerce.svg' %}" width="16px;" alt="">
+                                    <span class="rating-info place-website">Website</span>
+                                </a>
+                            </div>
+                            <div class="col-6 p-0">
+                                <a class="for-cursor">
+                                    <img src="{% static 'images/email.svg' %}" width="16px;" alt="">
+                                    <span class="rating-info">Email </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <a>
+                            <img src="{% static 'images/tel.svg' %}" width="18px" alt="">
+                            <span class="rating-info">+(994)444-44-44</span>
+                        </a>
+
+
+                        <div class="mt-2">
+                            <a class="improve-list">Improve this listing</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="row bg-white m-0">
+                <div class="col-12" style="padding: 0px 20px">
+                    <h2 class="three-reasons">Top 3 Reasons to Eat Here </h2>
+                </div>
+                <div class="col-12 d-flex flex-wrap place-all-reasons">
+                    <div class="col-lg-4 col-12" style="padding: 0px 5px;">
+                        <div class="reason">1. The place to go in JLT</div>
+                        <div class="d-flex">
+                            <img class="reason-img"
+                                src="https://media-cdn.tripadvisor.com/media/photo-f/18/e5/bd/46/indoor-tent.jpg"
+                                alt="">
+                            <div style="padding: 0px 26px 0px 16px;">
+                                <div class="reason-text">"Nice promotions and live music from Tuesday to Thursday"</div>
+                                <div class="d-flex align-items-center" style="margin-bottom: 10px;">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                                    <div class="ml-2 reviewer">87denizm</div>
+                                </div>
+                                <div class="highlight">See reviews that mention terrace</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12" style="padding: 0px 5px;">
+                        <div class="reason">2. Amazing for sports</div>
+                        <div class="d-flex">
+                            <img class="reason-img"
+                                src="https://media-cdn.tripadvisor.com/media/photo-s/0a/1d/5f/85/firuza.jpg" alt="">
+                            <div style="padding: 0px 26px 0px 16px;">
+                                <div class="reason-text">"You can play pool, PlayStation, drink and watch sports"</div>
+                                <div class="d-flex align-items-center" style="margin-bottom: 10px;">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                                    <div class="ml-2 reviewer">87denizm</div>
+                                </div>
+                                <div class="highlight">See reviews that mention terrace</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12" style="padding: 0px 5px;">
+                        <div class="reason">3. Great food menu</div>
+                        <div class="d-flex">
+                            <img class="reason-img"
+                                src="https://media-cdn.tripadvisor.com/media/photo-f/18/e5/c3/df/fillet.jpg" alt="">
+                            <div style="padding: 0px 26px 0px 16px;">
+                                <div class="reason-text">"amazing I had a steak which was cooked to perfection "</div>
+                                <div class="d-flex align-items-center" style="margin-bottom: 10px;">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                                    <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                                    <div class="ml-2 reviewer">87denizm</div>
+                                </div>
+                                <div class="highlight">See reviews that mention terrace</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="row bg-white m-0">
+                <div class="col-12">
+                    <div class="col-12" style="padding: 0px 5px;">
+                        <h2 class="place-details">Details</h2>
+                    </div>
+                    <div class="col-12 d-flex p-0 mt-4 flex-wrap">
+                        <div class="col-lg-4 col-12" style="padding: 0px 5px 20px 5px">
+                            <div class="about-place">
+                                <div class="place-special-topic">About</div>
+                                <div class="inner-special-topic">Dubai's popular bar & place. Eat, Drink, Chill. A
+                                    social
+                                    chill-out spot where eating
+                                    and drinking take center stage. ubk captivates its guests with a lively ambiance in
+                                    a
+                                    casual, laid-back atmosphere. The well-designed venue with its wooden beams of
+                                    different
+                                    hues, oozes warmth and a relaxed vibe. Fresh pub food favourites complement a vast
+                                    selection
+                                    of beverages while screens showcase the latest live sporting action. When Dubai’s
+                                    climate
+                                    turns balmy, the terrace outside becomes an urban oasis amidst skyscrapers and
+                                    trees.
+                                    Regular promotions, daily happy hour deals, live music from 8 PM on wards from
+                                    Tuesday
+                                    to
+                                    Friday, two pool tables, the only PlayStation booth in the UAE, private booths and
+                                    the
+                                    Friday Urban Brunch all play their part in the success and sociability of ubk.</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 price">
+                            <div class="place-special-topic">PRICE RANGE</div>
+                            <div class="inner-special-topic">AZN 17 - AZN 136</div>
+                            <div class="place-special-topic">Special Diets</div>
+                            <div class="inner-special-topic">Vegetarian Friendly, Vegan Options, Halal, Gluten Free
+                                Options
+                            </div>
+                            <div class="place-special-topic">Meals</div>
+                            <div class="inner-special-topic">Lunch, Dinner, Brunch, Late Night, Drinks</div>
+                        </div>
+                        <div class="col-lg-4 col-12" style="padding: 0px 5px">
+                            <div class="place-special-topic">CUISINES</div>
+                            <div class="inner-special-topic">Bar, Pub, International, Gastropub</div>
+                            <div class="place-special-topic">FEATURES</div>
+                            <div class="inner-special-topic">Takeout, Parking Available, Valet Parking, Highchairs
+                                Available, Delivery, Reservations, Outdoor Seating, Buffet, Seating, Validated Parking,
+                                Television, Serves Alcohol, Full Bar, Wine and Beer, Accepts American Express, Accepts
+                                Mastercard, Accepts Visa, Digital Payments, Cash Only, Free Wifi, Accepts Credit Cards,
+                                Live
+                                Music</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-bottom: 24px;">
+            <div class="row bg-white m-0">
+                <div class="col-12 justify-content-between d-flex align-items-center"
+                    style="padding: 25px 20px 20px 20px">
+                    <a class="nearby-places">Best Nearby places</a>
+                    <a class="see-all">See all</a>
+                </div>
+                <div class="col-12 d-flex flex-wrap" style="padding:0px 0px 0px 20px;margin-left:2px">
+                    <div class="col-lg-3 col-md-6 col-12 same-location mb-3">
+                        <div class="position:relative">
+                            <a href="">
+                                <div class="same-location-image-background img1"></div>
+                            </a>
+                            <div class="save-place-icon">
+                                <div class="same-location-save-place"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="same-location-place-name" href="">Zouzou place</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                            <div class="ml-1 same-location-review">85 Reviews</div>
+                        </div>
+                        <div>
+                            <span class="same-location-type">$$ - $$$, Turkish</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 same-location mb-3">
+                        <div class="position:relative">
+                            <a href="">
+                                <div class="same-location-image-background img2"></div>
+                            </a>
+                            <div class="save-place-icon">
+                                <div class="same-location-save-place"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="same-location-place-name" href="">BLVD on One</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                            <div class="ml-1 same-location-review">1,151 Reviews</div>
+                        </div>
+                        <div>
+                            <span class="same-location-type">$$ - $$$, European, Central European</span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 same-location mb-3">
+                        <div class="position:relative">
+                            <a href="">
+                                <div class="same-location-image-background img3"></div>
+                            </a>
+                            <div class="save-place-icon">
+                                <div class="same-location-save-place"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="same-location-place-name" href="">Cho Gao</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                            <div class="ml-1 same-location-review">1,409 Reviews</div>
+                        </div>
+                        <div>
+                            <span class="same-location-type">$$ - $$$, Chinese, Asian, Thai, Caucasian</span>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 same-location mb-3">
+                        <div class="position:relative">
+                            <a href="">
+                                <div class="same-location-image-background img4"></div>
+                            </a>
+                            <div class="save-place-icon">
+                                <div class="same-location-save-place"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="same-location-place-name" href="">Prani Dilli Dubai</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt="">
+                            <div class="ml-1 same-location-review">1,307 Reviews</div>
+                        </div>
+                        <div>
+                            <span class="same-location-type">$$ - $$$, Indian</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% include 'includes/subscribers.html' %}
+
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="{% static 'js/place_single_page.js' %}"></script>
+<script src="{% static 'js/rtop.videoPlayer.1.0.2.min.js' %}"></script>
+
+
+<script>
+    $(document).ready(function () {
+        var myPlayer = $('#example').RTOP_VideoPlayer();
+        myPlayer = $('#example').RTOP_VideoPlayer({
+            showControls: true,
+            showControlsOnHover: true,
+            controlsHoverSensitivity: 3000,
+            showScrubber: true,
+            showTimer: false,
+            showPlayPauseBtn: true,
+            showSoundControl: false,
+            showFullScreen: false,
+            keyboardControls: true,
+        });
+        myPlayer = $('#example').RTOP_VideoPlayer({
+            fontAwesomeControlIcons: true
+        });
+        myPlayer = $('#example').RTOP_VideoPlayer({
+            themeClass: 'rtopTheme',
+            loop: false,
+            allowReplay: true,
+            gtmTagging: false, // sends GTM tags
+            gtmOptions: {}
+        });
+    })
+
+</script>
+{% endblock %}
+
+
+
+{% endblock content %}

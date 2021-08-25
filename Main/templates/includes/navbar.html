@@ -1,0 +1,105 @@
+<!-- ........................Mobile Menu........................  -->
+<div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+            <span class="js-menu-toggle"><i style="font-size: 20px" class="fa fa-close"></i></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body">
+        <ul class="site-nav-wrap">
+            <li class="active">
+                <a href="{% url 'main:home' %}">Home</a>
+            </li>
+            <li class="has-children"><span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                    data-target="#collapseItem0" aria-expanded="false"></span>
+                <a href="destination.html">Destinations</a>
+
+                <ul class="collapse" id="collapseItem0" style="">
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">China</a></li>
+                    <li><a href="#">France</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'main:cities_list' %}">Cities</a></li>
+            <li><a href="{% url 'tours:tours-list' %}">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+        <ul class="site-nav-wrap" style="padding-left:20px;" data-class="social">
+        {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'account:logout' %}" class="Sign-methods mr-1">Sign Out</a>
+            </li>
+        {% else %} 
+                <li>
+                <a href="{% url 'account:login' %}" class="btn btn-black px-3 px-md-4 py-3">Sign in</a>
+                </li>
+        {% endif %}
+            <li>
+                <a href="{% url 'account:register' %}" class="Sign-methods ml-1">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- ........................Computer Menu........................ -->
+<header class="site-navbar py-1">
+    <div class="container" style="display: flex;justify-content: center;">
+        <div class="w-100 row align-items-center">
+            <div class="col-6 col-xl-2 p-0">
+                <h1 class="mb-0">
+                    <a style="text-decoration: none;" href="" class="text-black h2 mb-0">Travelers</a>
+                </h1>
+            </div>
+            <div class="col-10 col-md-8 d-none d-xl-block">
+                <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+                    <ul class="site-menu js-clone-nav d-none d-lg-block p-0" style="margin-right: 60px;">
+                        <li class="active">
+                            <a href="{% url 'main:home' %}">Home</a>
+                        </li>
+                        <li class="has-children">
+                            <a href="destination.html">Destinations <i style="font-size: 14px"
+                                    class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Japan</a></li>
+                                <li><a href="#">Europe</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="#">France</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'main:cities_list' %}">Cities</a></li>
+                        <li><a href="{% url 'tours:tours-list' %}">Tours</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-6 col-xl-2 p-0 text-right">
+                <div class="d-none d-xl-inline-block">
+                    <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0 " data-class="social">
+                         {% if request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'account:logout' %}" class="Sign-methods mr-1">Sign Out</a>
+                        </li>
+                    {% else %} 
+                            <li>
+                            <a href="{% url 'account:login' %}" class="Sign-methods mr-1">Log In</a>
+                            </li>
+                    {% endif %}
+                        <li>
+                                 <a href="{% url 'account:register' %}" class="Sign-methods ml-1">Sign Up</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
+                        href="#" class="site-menu-toggle js-menu-toggle text-black active"><i style="font-size: 24px"
+                            class="fa fa-bars"></i></a></div>
+            </div>
+        </div>
+    </div>
+
+</header>

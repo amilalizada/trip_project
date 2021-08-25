@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static hotel_tags %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/saved_hotels.css' %}">
+{% endblock%}
+{% block content %}
+
+<div class="row py-4">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6 ">
+        <div class="card text-center">
+            <div class="card-header">
+              Thank you for your reservations.
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+        
+            <div class="card-body">
+              <h6 class="card-title">{{message}}</h6>
+              <a href="{% url 'main:home' %}" class="btn btn-primary">Main menu</a>
+              <a href="{% url 'hotels_app:hotels' %}" class="btn btn-primary">Hotels</a>
+            </div>
+            {% endfor %}
+        
+            {% endif %}
+            <div class="card-footer text-muted">
+              
+            </div>
+          </div>
+        
+    </div>
+    <div class="col-3">
+
+    </div>
+</div>
+
+
+    
+
+
+
+
+
+{% include 'includes/subscribers.html' %}
+{% endblock %}

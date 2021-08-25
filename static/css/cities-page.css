@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    background-color: #f7fafd;
+}
+.card{
+    border: none;
+    border-radius: 5px;
+    background-color: #f7fafd;
+}
+.card-body{
+    background-color: white;
+    border-radius: 5px;
+
+}
+.card-image{
+    border-radius: 5px;
+    position: relative;
+}
+.nese{
+    position: absolute;
+    background: #1EC6B6;
+    padding: 7px 18px 4px 18px;
+    display: inline-block;
+    top: 20px;
+    left: 20px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    color: #fff;
+    font-size: 16px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    color: white !important;
+    cursor: pointer;
+
+}
+.in-div:hover .card-image .nese{
+    background-color: #ff4a52;
+}
+.first{
+    display: flex;
+    justify-content: space-between;
+}
+
+.in-div:hover .card-body .change-text-color{
+    color: #ff4a52;
+}
+/* .card:hover span{
+    background-color: #1ec6b6;
+} */
+.change-text-color{
+    color: black;
+    font-size: 22px;
+}
+.more-cities{
+    display: flex;
+    justify-content: center;
+}
+.more-cities-button{
+    width: 170px;
+    height: 50px;
+    background-color: #ff4a52;
+    border: solid#ff4a52;
+    background: #FF4A52;
+    color: #fff;
+    display: inline-block;
+    padding: 13px 39px;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+    .more-cities-button:hover{
+        background: #1EC6B6;
+        color: #fff !important;
+        transition: 0.3s;
+    }
+.under-div{
+    background-color: white;
+}
+.under-div-indiv{
+    display: flex;
+}
+.image-headerrr{
+    position: relative;
+}
+.header-text{
+    width: 60%;
+    position: absolute;
+    top: 200px;
+    left: 300px
+}
+.header-text h1{
+    font-size: 80px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 90px;
+    text-transform: capitalize;
+    font-family: "Nothing You Could Do", cursive;
+}
+.header-text h4{
+    font-size: 80px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 90px;
+    text-transform: capitalize;
+    font-family: "Nothing You Could Do", cursive;
+}
+.head-image{
+    height: 470px;
+}
+.stars{
+    display: flex;  
+}
+.star{
+    width: 14px;
+    height: 14px;
+}
+.in-div:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.pagination a{
+    color: black;
+}
+.circle{
+    border-radius: 50%;
+}
+.next-icon{
+    width: 15px;
+    height: 15px;
+}
+.previous-icon{
+    width: 15px;
+    height: 15px;
+}
+.block-27{
+    display: flex;
+    justify-content: center
+    ;
+}
+.active-page{
+    background: #1F1F1F !important;
+    color: #fff !important;
+    border: 1px solid transparent !important;
+    text-align: center !important;
+    display: inline-block !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+}
+.page{
+    font-size: 20px !important;
+    cursor: pointer;
+    margin: 2px;
+    color: black !important;
+}
+.act-num{
+    background-color: white !important;
+    color: black !important;
+    border-radius: 50% !important;
+    border: 1px solid black !important;
+    text-align: center !important;
+    display: inline-block !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+    cursor: pointer;
+}
+.act-num:hover{
+    background-color: black !important;
+    color: white !important;
+    border-radius: 50% !important;
+    border: 1px solid transparent !important;
+    text-align: center !important;
+    display: inline-block !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+}
+.page{
+    background-color: black;
+    color: white
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid #E6E6E6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page span{
+    color: white;
+}
+.page-numbers{
+    display: flex;
+}
+.block-27{
+    align-items: center;
+}

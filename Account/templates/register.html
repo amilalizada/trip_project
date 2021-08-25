@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<section class="ftco-section contact-section register">
+        <div class="container">
+            <div class="row block-9 justify-content-center">
+                <div class="col-md-6 order-md-last" style="display:flex; justify-content:center; flex-direction:column;">
+                    <form action="" method="POST" enctype="multipart/form-data" class="bg-light p-5 contact-form">
+                        <a class="navbar-brand center" href="#">Travelers<span>.</span></a>
+                        {% csrf_token %}
+                        {{form.non_field_errors }}
+                        {% for field in form %}
+                        <div class="form-group">
+                            {{field}}
+                            {{field.help_text}}
+                            {{field.errors}}
+                        </div>
+                        {% endfor %}
+                       
+                        <div class="form-group">
+                            <input type="submit" style="background-color:#4267b2;" value="Register" class="btn py-3 px-5">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

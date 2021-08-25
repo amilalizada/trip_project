@@ -1,0 +1,75 @@
+{% load custom_tags %}
+{% block css %}
+<style>
+    .body{
+        font-family: 'Roboto', sans-serif;
+    }
+    .overlayy {
+        background-image: url('https://colorlib.com/preview/theme/travelo/img/banner/newsletter.png;');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-position-x: -169px;
+        position: relative;
+    }
+.subs{
+    padding: 40px 0;
+    background-color:#3d485d;
+    opacity: 0.9;
+    z-index: 1;
+}
+.subs-text{
+    font-size: 24px;
+color: #fff;
+margin-bottom: 0;
+margin-bottom: 11px;
+}
+.sub-small-text{
+    color: #AAB1B7;
+font-size: 16px;
+line-height: 28px;
+margin-bottom: 0;
+}
+.input-terr{
+    z-index: 10;
+}
+    /* .ftco-subscribe.overlay::before{
+        
+    }
+
+    .overlayy::before {
+        position: absolute;
+        content: "";
+        background-color: #040E27;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: .1;
+    } */
+</style>
+{% endblock %}
+{% get_subscriber_form as form %}
+<section class="ftco-subscribe overlayy ftco-section ">
+    <div class="subs">
+        <div class="container ">
+            <div class="row text-wrap text-center heading-section ftco-animate justify-content-center">
+                <div class="col-md-4 col-12 offset-md-1 d-flex flex-column">
+                    <h4 class="mb-4 text-left text-white"><span class="subs-text">Subcribe to our Newsletter</span></h4>
+                    <p class="sub-small-text text-left" >Subscribe newsletter to get offers and about new places to discover.</p>
+                </div>
+                <div class="input-terr col-md-6 col-12 d-flex justify-content-left mt-4 mb-4">
+                    <form  method="POST" class="subscribe-form w-75">
+                        <div class="form-group d-flex">
+                            {% csrf_token %}
+                            {{form.email}}
+                            {{form.email.help_text}}
+                            <input type="submit" value="Subscribe"
+                                class="submit px-3 ml-2 py-2 bg-danger border-0 rounded text-light">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+<script src="https://js.stripe.com/v3/"></script>
+<link rel="stylesheet" href="{% static 'css/stripe.css' %}">
+{% endblock %}
+<section>
+
+    <body class="bg-light">
+        {% if request.user.is_authenticated %}
+            <div class="container">
+                <div class="py-5 text-center">
+                    <h2>Make your payment: </h2>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 order-md-2 mb-4">
+                        {% include 'stripe.html' %}
+                        
+                    </div>
+                    <div class="col-md-12 order-md-1">
+                        <ul class="list-group mb-3">
+                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-muted">Your reservation: </span>
+                            </h4>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed reservation-info">
+                                <div>
+                                    <small class="text-muted">Hotel name</small>
+                                </div>
+                                <h6 class="my-0">{{hotel.name}}</h6>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed reservation-info">
+                                <div>
+                                    <small class="text-muted">Room type</small>
+                                </div>
+                                <h6 class="my-0">{{room_type.title}}</h6>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed reservation-info">
+                                <div>
+                                    <small class="text-muted">Room description</small>
+                                </div>
+                                <h6 class="my-0">{{room_type.description}}</h6>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed reservation-info">
+                                <div>
+                                    <small class="text-muted">From </small>
+                                </div>
+                                <h6 class="my-0 first-date">{{request.GET.first_date}}</h6>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed reservation-info">
+                                <div>
+                                    <small class="text-muted">To</small>
+                                </div>
+                                <h6 class="my-0 second-date">{{request.GET.second_date}}</h6>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between lh-condensed reservation-info">
+                                <div>
+                                    <small class="text-muted">Price for 1 night</small>
+                                </div>
+                                <h6 class="my-0 price-for-night">{{room_type.price}}</h6>
+                            </li>
+                            
+                            <li class="list-group-item d-flex justify-content-between rsv-inf">
+                                <span style="font-weight: bold;">Total Price</span>
+                                <strong class="total-price" style="font-weight: bold;" data-sum="{{request.GET.total_days}}"></strong>
+                            </li>
+                        </ul>
+
+                    
+                    
+                        
+                    </div>
+                </div>
+        {% else %}
+            {% if messages %}
+            {% for message in messages %}
+        
+            <div class="card-body">
+            <h5 class="card-title">{{message}}</h5>
+            <a href="{% url 'main:home' %}" class="btn btn-primary">Main menu</a>
+            <a href="{% url 'hotels_app:hotels' %}" class="btn btn-primary">Hotels</a>
+            </div>
+            {% endfor %}
+        
+            {% endif %}
+        {% endif %}
+    </body>
+
+</section>
+
+
+{% include 'includes/subscribers.html' %}
+
+{% block js %}
+<script src="{% static 'js/payment.js' %}"></script>
+<script src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,424 @@
+{% extends 'base.html' %}
+{% load static hotel_tags %}
+{% block content %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/hotel-single.css' %}">
+{% endblock %}
+<section>
+    <div class="container">
+        <div class="row justify-content-between align-items-center pt-4">
+            <div class="col-3 ">
+                <h5>{{hotel.name}}</h5>
+                {% get_star_count hotel.rating as stars %}
+                {{stars|safe}}
+                <!-- <span class="star-icon">&#9733;&#9733;</span> -->
+            </div>
+            <div class="col-3 d-flex">
+                <a class="btn rounded text-primary" onclick="save_article({{hotel.id}});" style=" cursor: pointer;margin-right: 5px;background-color: rgb(168, 245, 248);"><i class="fa fa-heart-o"
+                        style="font-size:14px;"></i><span>Save</span></a>
+                <a class="btn rounded text-primary" href="{% url 'hotels_app:saved_hotels' %}" style="background-color: rgb(168, 245, 248);">Go to wishlist</a>
+            </div>
+        </div>
+        <div class="row p-3 gallery">
+            <div class="gallery col-lg-6 col-12 p-4">
+                <div class="images">
+                    <div class="image active">
+                        <div class="content"
+                            style="background-image: url({{hotel.main_image.url}})">
+                        </div>
+                    </div>
+                    {% for image in images %}
+                    <div class="image">
+                        <div class="content"
+                            style="background-image: url({{image.image.url}})">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="thumbs">
+                    <div class="thumb active"
+                        style="background-image: url({{hotel.main_image.url}})">
+                    </div>
+                    {% for image in images %}
+                    <div class="thumb"
+                        style="background-image: url({{image.image.url}}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6 col-12 ">
+                <h6 class="text-center" style="font-weight: bold;">Check in/Check out</h6>
+                <div class="calender"></div>
+            </div>
+        </div>
+        <div id="snackbar">Some text some message..</div>
+</section>
+<section>
+    <div class="container">
+        <div class="row pb-2">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="py-3">
+                            <span class="title-of-description">{{hotel.name_description}}</span>
+                        </div>
+                        <div class="py-2">
+                            <span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-star"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+                                    <path
+                                        d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
+                                </svg>
+                                <span class="short-description">{{hotel.short_description}}</span> </span>
+                        </div>
+                        <div class="main-description py-2 mb-4">
+                            {{hotel.long_description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex" style="background-color: gainsboro;">
+                <div class="row">
+                    <div class="col-12 pb-5">
+                        <div class="pb-4 px-4">
+                            <span class="most-popular-facilities">
+                                Most popular facilities :
+                            </span>
+                        </div>
+                        <div class="d-flex">
+                            {% for room_amenity in hotel.room_amenity.all %}
+                            <div class="popular-facilities  px-3 d-flex ">
+                                <span class="px-1">{{room_amenity.icon|safe}}</span>
+                                <span class="name-of-facility">{{room_amenity.name}}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="w-100 border table-class">
+                    <tbody>
+
+                        <tr class="row">
+                            <th class="col-5 p-3 table-headers first border">Accommodation Type </th>
+                            <th class="col-1 p-3 table-headers second border">Sleeps </th>
+                            <th class="col-3 p-3 table-headers third border">Price</th>
+                            <th class="col-3 p-3 table-headers forth border">
+
+                            </th>
+                        </tr>
+                        <tr class="row">
+                            {% for room_type in hotel.room_type.all %}
+                            <td class="border p-0 col-5">
+                                <div class="col-12">
+                                    <div class="row flex-column">
+
+                                        <div class="titles-for-types">
+                                            <span class="room-type">{{room_type.title}}</span>
+                                        </div>
+                                        <div class="titles-for-types">
+                                            <span class="bed-types-title">Bed count : </span>
+                                            <span style="font-weight: bold;">{{room_type.beds.count}} <i
+                                                    class="fa fa-bed pl-2" style="font-size:24px"></i></span>
+                                        </div>
+                                        <div class="titles-for-types">
+                                            <span class="small-description">
+                                                {{room_type.description}}
+                                            </span>
+                                        </div>
+                                        <div class="titles-for-types">
+                                            {% for room_amenity in room_type.room_amenity.all %}
+                                            <span class="px-2 facilities-with-logo">{{room_amenity.icon|safe}}
+                                                <span class="facilities-with-logo">{{room_amenity.name}}</span></span>
+                                            {% endfor %}
+
+                                        </div>
+                                        <div class=" d-flex justify-content-center align-items-center w-100">
+                                            <div class="underline-after-facilities">
+
+                                            </div>
+                                        </div>
+                                        <div class="titles-for-types">
+                                            {% for hotel_amenity in hotel.hotel_amenity.all %}
+                                            <span class="px-2 facilities-with-logo"><svg
+                                                    class="bk-icon -streamline-checkmark" fill="#008009" height="14"
+                                                    width="14" viewBox="0 0 128 128" role="presentation"
+                                                    aria-hidden="true" focusable="false">
+                                                    <path
+                                                        d="M56.33 100a4 4 0 0 1-2.82-1.16L20.68 66.12a4 4 0 1 1 5.64-5.65l29.57 29.46 45.42-60.33a4 4 0 1 1 6.38 4.8l-48.17 64a4 4 0 0 1-2.91 1.6z">
+                                                    </path>
+                                                </svg>
+                                                <span>{{hotel_amenity.name}}</span></span>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="border col-1 d-flex align-items-start">
+                                <div>
+                                    {% get_bed_count room_type.beds.count as beds %}
+                                    {{beds|safe}}
+                                </div>
+                            </td>
+                            <td class="border col-3 d-flex align-items-start">
+                                <div class="d-flex flex-column align-items-start">
+                                    <div class="col-12 ">
+                                        <div class="row">
+                                            <span class="price-value">AZN <span class="price-count"
+                                                    data-price="{{room_type.price}}">{{room_type.price}}</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="border col-3">
+                                {% if request.user.is_authenticated %}
+                                    <a type="button"
+                                        href="{% url 'hotels_app:hotels-reserve' room_type.id %}?HotelId={{hotel.id}}"
+                                        class="btn btn-primary rounded-0 reserve-button">i'll reserve</a>
+                                {% else %}
+                                    <a type="button"
+                                            href="{% url 'hotels_app:hotels' %}" class="btn btn-primary rounded-0 reserve-button">i'll reserve</a>
+                                {% endif %}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <h4>Hotel surroindings</h4>
+            </div>
+            <div class="col-6 px-4 py-2">
+                <div class="row ">
+                    <div class="col-12 py-3">
+                        <span class="restaurants-nearby d-flex align-items-center">
+                            <span><i class="material-icons rest-icon px-2">&#xe56c;</i></span>
+                            <span class="d-flex align-items-center pb-1"><span>Restaurants nearby</span></span>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12 d-flex justify-content-between px-4 py-2">
+                        <span class="names-of-places">Gulhane Tram Station </span>
+                        <span class="names-of-places">0 km</span>
+                    </div>
+                    <div class="line-under-surroundings">
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12 d-flex justify-content-between px-4 py-2">
+                        <span class="names-of-places">Gulhane Tram Station </span>
+                        <span class="names-of-places">0 km</span>
+                    </div>
+                    <div class="line-under-surroundings">
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12 d-flex justify-content-between px-4 py-2">
+                        <span class="names-of-places">Gulhane Tram Station </span>
+                        <span class="names-of-places">0 km</span>
+                    </div>
+                    <div class="line-under-surroundings">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 px-4 py-2">
+                <div class="row ">
+                    <div class="col-12 py-3">
+                        <span class="restaurants-nearby d-flex align-items-center">
+                            <span><i class='fas fa-walking px-2' style='font-size:24px'></i></span>
+                            <span class="d-flex align-items-center pb-1"><span>Important places</span></span>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12 d-flex justify-content-between px-4 py-2">
+                        <span class="names-of-places">Gulhane Tram Station </span>
+                        <span class="names-of-places">0 km</span>
+                    </div>
+                    <div class="line-under-surroundings px-2">
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12 d-flex justify-content-between px-4 py-2">
+                        <span class="names-of-places">Gulhane Tram Station </span>
+                        <span class="names-of-places">0 km</span>
+                    </div>
+                    <div class="line-under-surroundings">
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    <div class="col-12 d-flex justify-content-between px-4 py-2">
+                        <span class="names-of-places">Gulhane Tram Station </span>
+                        <span class="names-of-places">0 km</span>
+                    </div>
+                    <div class="line-under-surroundings">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container p-3 options-div text-dark">
+        <div class="row">
+            <div class="col-4">
+                <h4>Policies :</h4>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    {% for policy in hotel.policies.all %}
+                    <div class="col-6">
+                        <div class="py-3">
+                            <span class="option-title"> {{policy.title}} </span>
+                        </div>
+                        {% for subpolicy in policy.PoliciesSubFeatures.all %}
+                        <div>
+                            <p>{{subpolicy.title}}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="my-3 d-flex align-items-center">
+            <i class="material-icons mx-2" style="color:red">&#xe838;</i><span class="mt-1 review-rating-count"> {{medium_rating}}
+                {% review_count hotel.id as count %}
+                ({{count}} reviews)
+            </span>
+        </div>
+        <div class="row">
+            {% for key,value in ratings.items %}
+            <div class="col-12 col-md-6">
+                <div class="row my-2">
+                    <div class="col-3">
+                        <span>{{key}}</span>
+                    </div>
+                    <div class="col-7 align-items-center d-flex pb-2">
+                        <div class="line-div">
+                            <span class="line-span"></span>
+                        </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-center">
+                        
+                        <span class="rating-count">{{value}}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section>
+    {% reviews hotel.id as all_reviews %}
+    <div class="container" style="background-color:aliceblue;">
+        <div class="row justify-content-between">
+            {% for review in all_reviews %}
+            <div class="col-6 mt-2 rounded">
+                <div class="row p-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex">
+                            <div class="mr-2">
+                                <img class="user-avatar" src="{{review.reservation.user.image.url}}" alt="">
+                            </div>
+                            <div class="d-flex flex-column pt-1 justify-content-center">
+                                <span class="user-data">{{review.reservation.user.name}}
+                                    {{review.reservation.user.surname}}</span>
+                                <span class="user-data">{{review.created_at}}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span>{{review.subject}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="py-4">
+    <div class="container " style="background-color: rgb(245, 245, 245);">
+        <span class="nearest-hotels">Nearest hotels : </span>
+        <div class="line-under-hotels my-5 col-lg-block"></div>
+        <div class="row nearest-hotels-row">
+            {% for hotel in nearest_hotels %}
+            <div class="col-12 col-lg-3 ">
+                <div class="card p-2 mb-5 nearest-hotel-card parent-nearest-hotel-card">
+                    <img class="card-img-top" style="width: 230px; height: 150px;" src="{{hotel.main_image.url}}"
+                        alt="Card image cap">
+                    <div class="card-body p-0">
+                        <div class="p-2 ">
+                            <h5 class="card-title mb-1">{{hotel.name}}</h5>
+                            <div class="mb-2">
+                                {% get_star_count hotel.rating as stars %}
+                                {{stars|safe}}
+                            </div>
+                        </div>
+                        <div class="d-flex  justify-content-between">
+                            <div class="d-flex flex-column justify-content-start p-1 mb-3 ml-2">
+                                <div class="rating-count mt-2 mb-3 ml-4">{{hotel.rating}}</div>
+                                <div class="d-flex flex-column mr-2 justify-content-start" style="line-height:5px;">
+                                    <small>({{review_count}} Reviews)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column px-2">
+                                <span class="nearest-hotel-price text-right"><span
+                                        class="dollar-symbol mr-1">$</span>{{hotel.min_price}}</span>
+                                <a href="{% url 'hotels_app:hotels-single' hotel.slug %}" class="btn btn-primary">View deal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+{% include 'includes/subscribers.html' %}
+{% endblock %}
+{% block js %}
+<script>
+    function save_article(hotel_id){
+        $.ajax({
+            url: "{% url 'hotels_app:save_hotel' 12345 %}".replace('12345', hotel_id),
+            method: 'GET',
+            success: function(data){
+                show_message(data)
+            }
+        })
+        function show_message(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+    }
+    </script>
+
+{% endblock %}

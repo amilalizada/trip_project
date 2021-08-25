@@ -1,0 +1,178 @@
+body {
+  line-height: 1.7;
+  color: black;
+  font-weight: 300;
+  font-size: 1rem; 
+  margin: 0;
+  text-align: left;
+  background-color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+}
+
+
+.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #ce93d8;
+    box-shadow: 0 1px 0 0 #ce93d8;
+  }
+
+.search-parent{
+  background-image: url('https://www.tripadvisor.com/img2/brand/feed/home_hero_got_illustration.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+  left: 0;
+  height: 318px;
+  bottom: -18px;
+  width: var(--_2T1StAM-);
+  background-size: contain;
+}
+.for-bg{
+  background-color: #c9f2e3;
+
+}
+
+.main-images{
+  border-radius: 12px;
+}
+.main-images::before{
+  background: linear-gradient(to bottom, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%) !important;
+}
+.main-image-div:hover{
+  transform: translate(0,-10px) !important;
+  transition-duration: 0.3s;
+}
+.main-image-div:hover + .city-name{
+  color: red;
+}
+
+
+.main-image-div{
+  position: relative;
+  
+}
+.main-image-div a{
+  text-decoration: none;
+  color: white;
+  
+}
+.main-image-div:hover a{
+  color: red;
+  
+}
+.main-image-div::before{
+  background: linear-gradient(to bottom, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%) !important;
+
+}
+.city-name{
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  color: white;
+  font-size: 22px;
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+.content-h4{
+  position: relative;
+}
+.content-h4::before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-bottom: 1px solid black;
+}
+.span-under-content{
+  display: inline-block;
+    box-sizing: border-box;
+    max-width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 0 12px;
+}
+.content-name{
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.search-text{
+  font-size: 36px;
+    line-height: 40px;
+    color:rgb(20, 20, 20);
+    height: 80px;
+    display: flex;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin: 8px 0 24px;
+    font-weight: 900;
+    font-family: 'Do Hyeon', sans-serif;
+}
+.for-fonts{
+  font-family: 'Montserrat', sans-serif;
+}
+.search-input{
+font-size: 18px !important;
+line-height: 36px !important;
+padding-left: 42px !important;
+height: 60px !important;
+border-radius: 12px !important;
+box-shadow: 3px !important;
+}
+.search-input-form{
+border-radius: 12px;
+box-shadow: 0 4px 4px rgba(0,0,0,.25);
+position: relative;
+}
+.empty{
+  position: absolute;
+  z-index: 2000;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.for-linear:before{
+  background: linear-gradient(to bottom, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%) !important;
+}
+.counters-divv:before{
+  background: linear-gradient(to bottom, #000428  0%,#004e92 100%) !important;
+}
+.counterss{
+  color: black;
+}
+.demo-1,.demo-0,.demo-2{
+  font-weight: bolder;
+}
+.form-div{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.form-div a{
+  text-decoration: none;
+  color: black;
+  height: 44px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+
+}
+.form-div a:hover{
+  background-color: lightgray;
+
+}
+.ajax-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}

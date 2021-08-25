@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="py-4">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <h4 class="text-center py-3 for-fonts" style="font-family: 'Roboto', sans-serif;">We are an award
+                    winning Agency</h4>
+                <h6 class="text-center py-3 for-fonts" style="font-family: 'Roboto', sans-serif;">TAKE A LOOK AT OUR
+                    STORY</h6>
+            </div>
+
+            <div class="col-12 col-lg-6 bg-light">
+                <p class="for-fonts" style="font-family: 'Montserrat', sans-serif;line-height: 30px;">
+                    {{aboutUs.description}}</p>
+                <button type="button" class="btn btn-danger px-4 py-2 mt-3">Read More</button>
+            </div>
+            <div class="col-12 col-lg-6 bg-light">
+                <img class="rounded w-100" src="{{aboutUs.faq_icon.url}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="">
+    <div class="container  py-4">
+        <div class="counters-divv ">
+            <div class="row counters-div py-5"
+                style="background-image:linear-gradient(to bottom, rgba(64, 64, 66, 0.52), rgba(255, 255, 255, 0.73)),
+                url('https://ganasdemundo.com/wp-content/uploads/2019/09/Baku-8.jpg');background-repeat: no-repeat;background-position: center;">
+                <div class="col-12">
+                    <h2 class="p-3 text-center" style="font-family: 'Roboto', sans-serif;">Our services</h2>
+                </div>
+                <div class="col-12">
+                    <h6 class="p-3 text-center" style="font-family: 'Roboto', sans-serif;">TAKE A LOOK</h6>
+                </div>
+                <div class="col-12 d-flex justify-content-center px-5">
+                    <span class="text-center px-5 py-3"
+                        style="font-family: 'Roboto', sans-serif;padding: 0,50px;color: black;">Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam
+                        sagittis. Quisque vel est id justo faucibus dapibus id a nibh</span>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center counterss">
+                    <i class='fas fa-hotel p-3' style='font-size:36px'></i>
+                    <span class="demo-0 p-3"
+                        style="font-family: 'Montserrat', sans-serif;font-size: 24px;font-weight: bold;"></span>
+                    <span class="p-3"
+                        style="font-family: 'Montserrat', sans-serif;font-size: 24px;font-weight: bold;">Hotels</span>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center counterss">
+                    <i class='fas fa-utensils p-3' style='font-size:36px'></i>
+                    <span style="font-family: 'Montserrat', sans-serif;font-size: 24px;font-weight: bold;"
+                        class="demo-1 p-3"></span>
+                    <span class="p-3"
+                        style="font-family: 'Montserrat', sans-serif;font-size: 24px;font-weight: bold;">Restaurants</span>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center counterss">
+                    <i class='fas fa-map-marked-alt p-3' style='font-size:36px'></i>
+                    <span class="demo-2 p-3"
+                        style="font-family: 'Montserrat', sans-serif;font-size: 24px;font-weight: bold;"></span>
+                    <span class="p-3"
+                        style="font-family: 'Montserrat', sans-serif;font-size: 24px;font-weight: bold;">Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'includes/subscribers.html' %}
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+
+    $('.demo-0').animationCounter({
+        start: 0,
+        end: 50,
+        delay: 100
+    });
+
+    $('.demo-1').animationCounter({
+        start: 0,
+        end: 45,
+        delay: 100
+    });
+    $('.demo-2').animationCounter({
+        start: 0,
+        end: 80,
+        delay: 100
+    });
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static custom_tags %}
+{% block content %}
+
+
+<section>
+    <div class="container p-4">
+        <div class="row border">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <h3 class="p-4 ml-3 ">Terms of use</h3>
+            </div>
+            
+            <span class="p-4">
+                {% get_privacy_terms as privacy_terms %}
+                {{privacy_terms.privacy.terms_of_service|safe}}
+            </span>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

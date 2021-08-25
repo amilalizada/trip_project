@@ -1,0 +1,23 @@
+[
+    {
+        "model": "Account.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$AJtLanvxCG4K$YyhOJQJSMJ0Oo4cnBP4Wx++YaxwbMlnyfmF/sEPIWmM=",
+            "last_login": "2020-09-08T10:41:17.569Z",
+            "is_superuser": true,
+            "username": "amil",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-09-08T10:40:48.885Z",
+            "email": "amil@amil.com",
+            "image": "",
+            "name": "",
+            "surname": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

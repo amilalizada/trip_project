@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+        <div class="row for-bg p-4">
+            <div class="rounded search-parent col-12 d-flex flex-column justify-content-center align-items-center p-5">
+                <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class=" active-cyan-3 active-cyan-4 mb-4 col-12 w-75 ">
+                    <h4 class="search-text">Find the good out there</h4>
+
+                    <form class="search-input-form" action="">
+                       <input autocomplete="off" class="form-control search-input" id="search" type="text" placeholder="Search..." aria-label="Search">
+                    <div class="empty w-100"></div>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid">
+        <h4 class="text-center p-5 content-h4">
+            <span class="span-under-content">
+                <span class="content-name">
+                    Cities
+                </span>
+            </span>
+        </h4>
+        <div class="container">
+            <div class="row align-items-center justify-content-center p-4">
+                {% for city in city_list %}
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="for-linear">
+                    <div class="main-image-div" style="height: 250px;">
+                        <img class="main-images w-100 h-100 rounded" src="{{city.main_image.url}}" alt="">
+                        <a href="{% url 'main:city-detail' city.slug  %}" class="city-name">{{city.name}}</a>
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <h4 class="text-center p-5 content-h4">
+            <span class="span-under-content">
+                <span class="content-name">
+                    Tours
+                </span>
+            </span>
+        </h4>
+        <div class="container">
+            <div class="row align-items-center justify-content-center p-4">
+                {% for tour in tours %}
+                 <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="for-linear">
+                    <div class="main-image-div" style="height: 250px;">
+                        <img class="main-images w-100 h-100 rounded" src="{{tour.main_image.url}}" alt="">
+                        <a href="{% url 'tours:tour-detail' tour.slug  %}" class="city-name">{{tour.name}}</a>
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+       
+    </div>
+</section>
+{% include 'includes/subscribers.html' %}
+
+{% block js %}
+
+
+<script src="{% static 'js/main-page.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{% endblock %}
+{% endblock content %}

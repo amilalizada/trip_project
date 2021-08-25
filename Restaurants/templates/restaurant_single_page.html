@@ -1,0 +1,791 @@
+{% extends 'base.html' %}
+{% block title %} Restaurants Single Page {% endblock %}
+
+{% load static restaurant_tags %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/single-page-restaurant.css' %}">
+<link rel="stylesheet" href="{% static 'css/rtop.videoPlayer.1.0.2.min.css' %}">
+<link href="{% static 'css/photoviewer.min.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="land-of-fire">
+    <img src="{% static 'images/landoffire.jpg' %}" alt="">
+</div>
+
+<div class="all-photos-page bg-white d-none">
+    <div class="restaurant-container" style="padding: 50px 0px 0px 0px">
+        <div class="row" style="padding: 0px 50px">
+            <div class="close-all-photos">
+                <img src="/static/images/closetable.svg" width="16px" alt="">
+            </div>
+            {% images object.id as all_images %}
+            {% for image in all_images %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-1">
+                <a data-fancybox="gallery2" href="{{image.images.url}}"> <img width="100%" height="100%"
+                        src="{{image.images.url}}" alt=""> </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+<div class="restaurant-container mt-3">
+    <div class="row bg-white m-0 responsive-restaurant-information">
+        <div class="col-12 d-flex justify-content-between p-0">
+            <div class="single-restaurant-name">{{object.name}}</div>
+            <div class="d-flex align-items-center">
+                <a class="d-flex save-button align-items-center">
+                    <div onclick="save_article({{object.id}})" class="heart-img"></div>
+                    <div class="restaurant-save ml-1 d-sm-block d-none">Save</div>
+                </a>
+                <div class="save-share-border ml-2 mr-2 d-sm-block d-none"></div>
+                <a href="{% url 'restaurants_app:saved_wishlist' %}" class="d-flex align-items-center" style="cursor: pointer;text-decoration: none;color:black">
+                    <img src="{% static 'images/wish.svg' %}" width="19px" height="18px;" alt="">
+                    <div  class="restaurant-share ml-1 d-sm-block d-none">Wishlist</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 p-0">
+            <div class="d-flex align-items-center">
+                {% review_part object.id as food_review %}
+                {{food_review.star_html_all|safe}}
+                {% review_restaurant object.id as reviews %}
+                <div class="single-page-feedback">{{reviews.reviews_count}} reviews</div>
+                <div class="save-share-border ml-2 mr-2 d-md-block d-none"></div>
+                <div class="d-md-block d-none">
+                    <span class="dotted-border special-font">
+                        {% restaurant_place object.id object.city as place %}
+                        <span class="single-page-index">#{{place}}
+                            {% countRestaurantsCity object.city object.id as count_same_city %}
+                        </span> of {{count_same_city.count}} Restaurants in <span
+                            class="object-city">{{object.city}}</span> </span>
+                </div>
+                <div class="d-md-block d-none save-share-border ml-2 mr-2"></div>
+                <div class="special-font d-md-block d-none" style="opacity: 0.8">{{object.cuisines}}</div>
+
+            </div>
+        </div>
+        <div class="special-font d-md-none d-block" style="opacity: 0.8">{{object.cuisines}}</div>
+        <div class="col-12 p-0 d-md-flex d-none">
+            <div class="d-flex align-items-center flex-wrap">
+                <div class="col-12 d-flex p-0">
+                    <div><img src="{% static 'images/pin.svg' %}" width="16px" alt=""></div>
+                    <div class="ml-1">
+                        <a href='https://www.google.com/maps/place/{{object.location_link}}' target="_blank"
+                            class="dotted-border special-font ">{{object.location}}</a>
+                    </div>
+                </div>
+
+
+                <div class="d-none col-12 d-md-flex p-0">
+                    <div>
+                        <img src="{% static 'images/tel.svg' %}" width="18px" alt="">
+                        <span class="dotted-border special-font">{{object.phone_number}}</span>
+                    </div>
+                    <div class="save-share-border ml-2 mr-2"></div>
+                    <div>
+                        <a class="links" target="_blank" href="{{object.website}}">
+                            <img src="{% static 'images/ecommerce.svg' %}" width="16px;" alt="">
+                            <span class="dotted-border special-font">Website</span>
+                        </a>
+                    </div>
+                    <div class="save-share-border ml-2 mr-2"></div>
+                    <div>
+                        {% menu_images object.id as all_menu_images %}
+                        {% for image in all_menu_images %}
+                        <a style="text-decoration: none;" data-fancybox="gallery"
+                            href="{{image.images.url}}">{% endfor %}
+                            <img src="{% static 'images/menu.svg' %}" width="16px;" alt="">
+                            <span class="dotted-border special-font menu-list">Menu</span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class=" col-12" style="padding: 0px 0px 0px 10px">
+            <div style="display: inline-block">
+                <div class="d-flex jquery-effect">
+                    <img src="{% static 'images/opentime.svg' %}" width="16px" alt="">
+                    <div class="ml-1 mr-1">
+                        <span class="dotted-border special-font open-time">
+                            <span class="single-page-index">Opening Times:</span>
+                            {{object.open_time|date:"h:i a"}} - {{object.close_time|date:"h:i a"}}</span>
+                    </div>
+                    <img class="img-info" src="{% static 'images/info.svg' %}" width="16px" alt="">
+                </div>
+                <div class="table-restaurant-open-time d-none">
+                    <div class="table-worktime">
+                        <div class="work-hours">
+                            <h2 class="hours">Hours</h2>
+                            <div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Sun</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Mon</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Tue</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Wed</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Thu</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Fri</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                                <div class="d-flex work-hours-views">
+                                    <div class="col-4 p-0">Sat</div>
+                                    <div class="col-8 p-0">{{object.open_time|date:"h:i a"}} -
+                                        {{object.close_time|date:"h:i a"}}</div>
+                                </div>
+                            </div>
+                            <div class="position-exit-cursor">
+                                <img src="{% static 'images/closetable.svg' %}" width="8px" alt="">
+                            </div>
+                            <div class="triangle-table"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="single-page-background">
+
+    <div class="restaurant-container" style="padding: 20px">
+        <div class="row">
+            <div class="col-md-6 col-sm-9 col-12 auto-video">
+                <div style="height: 100%">
+                    <div style="height: 100%" id="example">
+                        <video src="{{object.video.url}}" type="video/mp4" playsinline>
+                            <source src="{{object.video.url}}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-md-block d-none" style="padding: 0px 1px 0px 1px">
+                <div class="h-100">
+                    <img class="img-style" width="100%" src="{{object.image.url}}" alt="">
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 d-sm-block d-none" style="padding: 0px 15px 0px 1px">
+                <div style="padding-bottom:1px;height:50%;">
+                    <img class="img-style" width="100%" src="{{object.image_second.url}}" alt="">
+                </div>
+                <div style="padding-top: 1px;height:50%;">
+                    <img class="img-style" width="100%" src="{{object.image_third.url}}" alt="">
+                </div>
+            </div>
+            <div class="col-12">
+                <div href="" class="all-photos align-items-center d-flex">
+                    <div><i class="fa fa-camera"></i></div>
+                    {% images_count object.id as count %}
+                    <div>All photos ({{count}})</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 d-flex mobile-contact-info bg-white d-block d-md-none">
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+            <a href="#call" class="d-flex flex-column align-items-center justify-content-center"
+                style="cursor: pointer">
+                <img src="{% static 'images/tel.svg' %}" width="16px" alt="">
+                <div style="color: black">Call</div>
+            </a>
+        </div>
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+            <a href="https://www.google.com/maps/place/{{object.location_link}}" target="_blank"
+                class="d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+                <img src="{% static 'images/pin.svg' %}" width="16px" alt="">
+                <div style="color: black">Map</div>
+            </a>
+        </div>
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+            <a class="menu-list d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+                <img src="{% static 'images/menu.svg' %}" width="16px;" alt="">
+                <div>Menu</div>
+            </a>
+        </div>
+
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center" style="cursor: pointer">
+            <a href="{{object.website}}" target="_blank"
+                class="d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static 'images/ecommerce.svg' %}" width="16px;" alt="">
+                <div style="color: black">Website</div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="restaurant-container">
+        <div class="mt-2">
+            <div class="row">
+                <div class="col-lg-6 col-12 mb-4">
+                    <div class="for-border">
+                        <div>
+                            <h2 class="m-0 single-page-information-topic">Ratings and reviews</h2>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span style="font-size: 24px;font-weight: 700;">{{food_review.star_html_all_count}}</span>
+
+                            {{food_review.star_html_all|safe}}
+                            <span class="single-page-feedback">{{reviews.reviews_count}} reviews</span>
+                        </div>
+                        <div style="line-height: 12px;">
+                            <span>
+                                {% restaurant_place object.id object.city as place %}
+
+                                <span class="single-page-index">#{{place}}</span>
+                                <span class="special-font">of {{count_same_city.count}} Restaurants in
+                                    {{object.city}}</span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                {% restaurant_place_all object.id as place %}
+                                <span class="single-page-index">#{{place}}</span>
+                                {% countRestaurants as information %}
+                                <span class="special-font">of {{information.restaurant}} Restaurants in
+                                    Azerbaijan</span>
+                            </span>
+                        </div>
+                        <div class="mt-3">
+                            <span> <img src="{% static 'images/travel.svg' %}" width="16px" alt=""> </span>
+                            <span class="single-page-index">Travelers' Choice</span>
+                        </div>
+                        <div style="border-bottom:1px solid rgba(0,0,0,.12);margin:45px 0px;"></div>
+                        <div>
+                            <h5 style="font-size: 12px;color: #474747;">RATINGS</h5>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/fruit.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Food</span>
+                            </div>
+                            <div>
+                                {{food_review.star_html_food|safe}}
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/order.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Service</span>
+                            </div>
+                            <div>
+                                {{food_review.star_html_service|safe}}
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/wallet.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Value</span>
+                            </div>
+                            <div>
+                                {{food_review.star_html_value|safe}}
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <span> <img src="{%static 'images/candle.svg' %}" width="16px" alt=""></span>
+                                <span class="rating-info">Atmosphere</span>
+                            </div>
+                            <div>
+                                {{food_review.star_html_atmosphere|safe}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-12 mb-4">
+                    <div class="for-border">
+                        <div>
+                            <h2 class="m-0 single-page-information-topic">Food and ambience</h2>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="single-page-bar">Bar, Pub, International, Gastropub, Vegetarian Friendly, Vegan
+                                Options</span>
+                        </div>
+                        <div style="line-height: 12px;">
+                            <span>
+                                <img style="margin-bottom: 3px;" src="{% static 'images/quote.svg' %}" width="13px"
+                                    alt="">
+                                <span class="brunch">Christmas</span> <span class="rating-info m-0">brunch</span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <img style="margin-bottom: 3px;" src="{% static 'images/quote.svg' %}" width="13px"
+                                    alt="">
+                                <span class="brunch">Christmas</span> <span class="rating-info m-0">brunch</span>
+                            </span>
+                        </div>
+                        <div style="border-bottom:1px solid rgba(0,0,0,.12);margin:25px 0px;"></div>
+                        <div>
+                            <h5 class="single-page-bar">Special occasions, Romantic, Large groups,
+                                Bar scene</h5>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <span>
+                                <img style="margin-bottom: 3px;" src="{% static 'images/quote.svg' %}" width="13px"
+                                    alt="">
+                                <span class="brunch">Christmas</span> <span class="rating-info m-0">brunch</span>
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-lg-6 col-12 mb-4">
+                    <div class="for-border">
+                        <div>
+                            <h2 class="m-0 single-page-information-topic">Location and contact</h2>
+                        </div>
+                        <div class="mb-3">
+                            <img alt="" class="w-100 rAA8XwlX"
+                                src="https://maps.google.com/maps/api/staticmap?&amp;channel=ta.desktop.restaurant_review&amp;zoom=15&amp;size=347x137&amp;scale=1&amp;client=gme-tripadvisorinc&amp;format=jpg&amp;sensor=false&amp;language=en_US&amp;center=25.066359,55.137562&amp;maptype=roadmap&amp;&amp;markers=icon:http%3A%2F%2Fc1.tacdn.com%2F%2Fimg2%2Fmaps%2Ficons%2Fcomponent_map_pins_v1%2FR_Pin_Small.png|25.066359,55.137562&amp;signature=ezjhMIRKPT5b0EaetyznoTyl9XM=">
+                        </div>
+                        <div class="d-flex" style="line-height: 12px;position:relative">
+                            <img style="position: absolute" src="{% static 'images/pin.svg' %}" width="16px" alt="">
+                            <div class="col-12" style="margin-left: 13px">
+                                <a href='https://www.google.com/maps/place/{{object.location_link}}' target="_blank"
+                                    class="restaurant-location-info"> {{object.location}} </a>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="col-6 p-0">
+                                <a style="text-decoration: none" target="_blank" href="{{object.website}}"
+                                    class="for-cursor ">
+                                    <img src="{% static 'images/ecommerce.svg' %}" width="16px;" alt="">
+                                    <span class="rating-info restaurant-website">Website</span>
+                                </a>
+                            </div>
+                            <div class="col-6 p-0">
+                                <a class="for-cursor">
+                                    <img src="{% static 'images/email.svg' %}" width="16px;" alt="">
+                                    <span class="rating-info">Email </span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <a>
+                            <img src="{% static 'images/tel.svg' %}" width="18px" alt="">
+                            <span id="call" class="rating-info">{{object.phone_number}}</span>
+                        </a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="row bg-white m-0">
+                <div class="col-12" style="padding: 0px 20px">
+                    <h2 class="three-reasons">The 3 Most Important Reasons to Eat Here </h2>
+                </div>
+                <div class="col-12 d-flex flex-wrap restaurant-all-reasons">
+                    {% reason_to_eat object.id as reasons %}
+                    {% for reason in reasons %}
+                    <div class="col-lg-4 col-12" style="padding: 0px 5px;">
+                        <div class="reason">{{reason.reason}}</div>
+                        <div class="d-flex">
+                            <img class="reason-img" src="{{reason.reason_img.url}}" alt="">
+                            <div style="padding: 0px 26px 0px 16px;">
+                                <div class="reason-text">"{{reason.reason_short_description}}"</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="row bg-white m-0">
+                <div class="col-12">
+                    <div class="col-12" style="padding: 0px 5px;">
+                        <h2 class="restaurant-details">Details</h2>
+                    </div>
+                    <div class="col-12 d-flex p-0 mt-4 flex-wrap">
+                        <div class="col-lg-4 col-12" style="padding: 0px 5px 20px 5px">
+                            <div class="about-restaurant">
+                                <div class="restaurant-special-topic">About</div>
+                                <div class="inner-special-topic">{{object.description}}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 price">
+                            <div class="restaurant-special-topic">PRICE RANGE</div>
+                            <div class="inner-special-topic">AZN {{object.min_price}} - AZN {{object.max_price}}</div>
+                            <div class="restaurant-special-topic">Special Diets</div>
+                            <div class="inner-special-topic">{{object.special_diets}}</div>
+                            <div class="restaurant-special-topic">Meals</div>
+                            <div class="inner-special-topic">{{object.meals}}</div>
+                        </div>
+                        <div class="col-lg-4 col-12" style="padding: 0px 5px">
+                            <div class="restaurant-special-topic">CUISINES</div>
+                            <div class="inner-special-topic">{{object.cuisines}}</div>
+                            <div class="restaurant-special-topic">FEATURES</div>
+                            <div class="inner-special-topic">{{object.features}}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-bottom: 24px;">
+            <div class="row bg-white m-0">
+                <div class="col-12 justify-content-between d-flex align-items-center"
+                    style="padding: 25px 20px 20px 20px">
+                    <a class="nearby-restaurants">Best Nearby Restaurants</a>
+                    <a href="http://localhost:8000/restaurants" class="see-all">See All Restaurants</a>
+                </div>
+                <div class="col-12 d-flex flex-wrap" style="padding:0px 0px 0px 20px;margin-left:2px">
+                    {% for near_restaurant in count_same_city.near_by_restaurants %}
+                    <div class="col-lg-3 col-md-6 col-12 same-location mb-3">
+                        <div class="position:relative">
+                            <a href="{{near_restaurant.get_absolute_url}}">
+                                <div style="background-image: url({{near_restaurant.image.url}})"
+                                    class="same-location-image-background"></div>
+                            </a>
+                            <div class="save-restaurant-icon">
+                                <div onclick="save_article({{near_restaurant.id}})"
+                                    class="same-location-save-restaurant"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="same-location-restaurant-name" href="">{{near_restaurant.name}}</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <!-- <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-2.svg' %}" width="12px" height="12px" alt="">
+                            <img src="{% static 'images/image-3.svg' %}" width="12px" height="12px" alt=""> -->
+                            <span class="star-near-restaurant">
+                                {% review_part near_restaurant.id as food_review2 %}
+                                {{food_review2.star_html_all|safe}}
+                            </span>
+                            {% review_restaurant near_restaurant.id as near_restaurant_review %}
+                            <div class="ml-1 same-location-review">{{near_restaurant_review.reviews_count}} Reviews
+                            </div>
+                        </div>
+                        <div>
+                            <span class="same-location-type">{{near_restaurant.cuisines}}</span>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-4" style="padding-bottom: 24px">
+            <div class="row bg-white m-0">
+                <div class="col-12" style="padding: 0px 20px;">
+                    <h2 class="restaurant-details">Comments</h2>
+                </div>
+
+                {% for review in reviews.reviews %}
+
+                <div class="col-lg-6 col-12 d-flex mt-4 flex-wrap" style="padding: 0px 20px;">
+                    <div class="col-sm-3 col-12 d-flex justify-content-center align-items-center"
+                        style="flex-direction: column;">
+                        <div class="user-image">
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-l/1a/f6/de/5a/default-avatar-2020-36.jpg"
+                                alt="">
+                        </div>
+                        <div class="inner-special-topic p-0 comment-user">{{review.user}}</div>
+                    </div>
+                    <div class="col-sm-9 col-12 mt-sm-0 mt-1 text-sm-left text-center" style="padding: 0px 20px">
+
+                        <div class="d-flex align-items-center justify-content-sm-start justify-content-center"
+                            style="margin-bottom: 5px;">
+                            {% review_overall review.food_rating review.service_rating review.value_rating review.atmosphere_rating as average %}
+                            {{average|safe}}
+                            <div class="ml-1 inner-special-topic p-0">Reviewed {{review.created_at|date:"F d, Y"}}
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <p>{{review.comment}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+                {% get_review_form as form %}
+                <div class="col-12 review-form" style="padding: 0px 20px">
+                    <form action="{% url 'restaurants_app:restaurants_review' %}" method="POST" class="review-form">
+                        {% csrf_token %}
+                        <div class="mt-5"></div>
+                        <div class="col-12 justify-content-between align-items-center d-flex mb-3 flex-wrap" style="font-weight: 400;">
+                            <span class="col-sm-3 col-12"></span>
+                            <div class="col-sm-9 d-flex justify-content-center">
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div>Bad</div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div style="white-space: nowrap">Not Bad</div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div>Normal</div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div>Good</div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div>Perfect</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 justify-content-between align-items-center d-flex mb-1 flex-wrap"
+                            style="font-weight: 400;">
+                            <span class="col-sm-3 col-12">{{form.food_rating.label}}</span>
+                            <div class="col-sm-9 d-flex justify-content-center">
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio food-rating" type="radio" value="1" name="food_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio food-rating" type="radio" value="2" name="food_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio food-rating" type="radio" value="3" name="food_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio food-rating" type="radio" value="4" name="food_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio food-rating" type="radio" value="5" name="food_rating"></div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="d-none"><input type="hidden" class="food-rating-form"
+                                    value="{{form.food_rating}}"></div>
+
+                        </div>
+                        <div class="col-12 justify-content-between align-items-center d-flex mb-1 flex-wrap"
+                            style="font-weight: 400;">
+                            <span class="col-sm-3 col-12">{{form.service_rating.label}}</span>
+                            <div class="col-sm-9 d-flex justify-content-center">
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio service-rating" type="radio" value="1" name="service_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio service-rating" type="radio" value="2" name="service_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio service-rating" type="radio" value="3" name="service_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio service-rating" type="radio" value="4" name="service_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio service-rating" type="radio" value="5" name="service_rating"></div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="d-none"><input type="hidden" class="service-rating-form"
+                                value="{{form.service_rating}}"></div>
+                        </div>
+                        <div class="col-12 justify-content-between align-items-center d-flex mb-1 flex-wrap"
+                            style="font-weight: 400;">
+                            <span class="col-sm-3 col-12">{{form.value_rating.label}}</span>
+                            <div class="col-sm-9 d-flex justify-content-center">
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio value-rating" type="radio" value="1" name="value_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio value-rating" type="radio" value="2" name="value_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio value-rating" type="radio" value="3" name="value_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio value-rating" type="radio" value="4" name="value_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio value-rating" type="radio" value="5" name="value_rating"></div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="d-none"><input type="hidden" class="value-rating-form"
+                                value="{{form.value_rating}}"></div>
+                        </div>
+                        <div class="col-12 justify-content-between align-items-center d-flex mb-1 flex-wrap"
+                            style="font-weight: 400;">
+                            <span class="col-sm-3 col-12">{{form.atmosphere_rating.label}}</span>
+                            <div class="col-sm-9 d-flex justify-content-center">
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio atmosphere-rating" type="radio" value="1" name="atmosphere_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio atmosphere-rating" type="radio" value="2" name="atmosphere_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio atmosphere-rating" type="radio" value="3" name="atmosphere_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio atmosphere-rating" type="radio" value="4" name="atmosphere_rating"></div>
+                                </div>
+                                <div
+                                    class="col-2 style-radio-input d-flex justify-content-center align-items-center flex-column">
+                                    <div><input class="regular-radio atmosphere-rating" type="radio" value="5" name="atmosphere_rating"></div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="d-none"><input type="hidden" class="atmosphere-rating-form"
+                                value="{{form.atmosphere_rating}}"></div>
+                        </div>
+                        <div class="col-12 mt-5 d-flex mb-1 align-items-center flex-wrap" style="font-weight: 400;">
+                            <span class="col-sm-3 col-12">{{form.comment.label}}</span>
+                            <span class="col-sm-9 col-12">{{form.comment}}</span>
+                        </div>
+
+                        <input type="hidden" value="{{object.name}}" name='restaurant'>
+                        <input type="hidden" value="{{object.slug}}" name="slug" id="">
+                        <div style="padding: 0px 30px;float:right">
+                            <input id="review-submit" type="submit" value="Add" class="submit px-3">
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% include 'includes/subscribers.html' %}
+
+
+{% block js %}
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="{% static 'js/restaurant_single_page.js' %}"></script>
+<script src="{% static 'js/rtop.videoPlayer.1.0.2.min.js' %}"></script>
+<script src="{% static 'js/photoviewer.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script>
+    function save_article(restaurant_id) {
+        $.ajax({
+            url: "{% url 'restaurants_app:save_wishlist' 12345 %}".replace('12345', restaurant_id),
+            method: 'GET',
+            success: function (data) {
+                show_message(data)
+            }
+        })
+        function show_message(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function () {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+        }
+    }
+
+
+    $(document).ready(function () {
+
+        var vid = $('#example').RTOP_VideoPlayer({
+            showFullScreen: true,
+            showTimer: true,
+            showSoundControl: true
+        });
+
+
+
+    })
+
+</script>
+{% endblock %}
+
+
+
+{% endblock content %}

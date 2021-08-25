@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% load static hotel_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/hotels.css' %}">
+{% endblock%}
+{% block content %}
+<section id="url" data-url="{{url}}">
+
+    <div class="container p-4 ">
+        <div class="row justify-content-center">
+            <div class=" col-xl-3 col-12">
+                <h4>Filters</h4>
+                <div class="row ">
+                    <div class="col-xl-12 mr-lg-2 mb-lg-2 col-lg-5  col-12 bg-warning">
+                        <h4 class="mt-2">Search</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <small>Destination/property name:</small>
+                            </div>
+                            <div class="col-12">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <div class="border rounded  bg-white ">
+                                            <form class="bg-white p-1 d-flex align-items-center">
+                                                <i class="fa fa-search "></i>
+                                                <input class="border-0" id="city-name" style="width:94%" type="text"
+                                                    placeholder="Baku">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 w-100">
+                                        <small>Check-in date</small>
+                                        <input id="datepicker" class="bg-white" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 w-100">
+                                        <small>Check-out date</small>
+                                        <input id="datepicker1" class="bg-white" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row mt-2">
+                                    <div class="col-12 pt-2">
+                                        <div class="border w-100 py-1 bg-white">
+                                            <select class="border-0 bg-white w-100" name="" id="selected-beds">
+                                                <option value="1">2 beds</option>
+                                                <option value="3">3 beds</option>
+                                                <option value="4">4 beds</option>
+                                                <option value="5">5 beds</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6 py-1 pr-1 children-rooms">
+                                        <div class="border w-100 py-1 bg-white">
+                                            <select class="border-0 bg-white w-100" name="" id="selected-child-count">
+                                                <option value="">No children</option>
+                                                <option value="1">1 child</option>
+                                                <option value="2">2 children</option>
+                                                <option value="3">3 children</option>
+                                                <option value="4">4 children</option>
+                                                <option value="5">5 children</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 py-1 pl-1 children-rooms">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="border w-100 py-1 bg-white">
+                                                    <select class="border-0 bg-white w-100" name=""
+                                                        id="selected-room-count">
+                                                        <option value="1">1 room</option>
+                                                        <option value="2">2 rooms</option>
+                                                        <option value="3">3 rooms</option>
+                                                        <option value="4">4 rooms</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row p-3">
+                                    <button type="button" id="search-button-1"
+                                        class="btn btn-danger rounded-0 w-100">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12  col-lg-5 col-12">
+                        <div class="row">
+                            <div class="col-12 border p-2 my-1">
+                                <div class="py-2">
+                                    <h6 class="bolder-words">By price : </h6>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text min-span" id="inputGroup-sizing-sm">min</span>
+                                    </div>
+                                    <input type="text" class="form-control min-price" aria-label="Small"
+                                        aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text max-span " id="inputGroup-sizing-sm">max</span>
+                                    </div>
+                                    <input type="text" class="form-control max-price" aria-label="Small"
+                                        aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 mr-lg-2 mb-lg-2 col-lg-5 col-12">
+                        <div class="row">
+                            <div class="col-12 border p-2 my-1">
+                                <div class="py-2">
+                                    <h6 class="bolder-words">Hotel amenities</h6>
+                                </div>
+                                <div class="" id="amenities-hotel">
+                                    {% for amenity in hotel_amenities %}
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <label class="containerr">
+                                            <input class="checked-inputs hotel-amenity" type="checkbox">
+                                            <span class="checkmark border"></span>
+                                        </label>
+                                        <span class="mt-3 choose-types">{{amenity.name}}</span>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-5 col-12">
+                        <div class="row">
+                            <div class="col-12 border p-2 my-1">
+                                <div class="py-2">
+                                    <h6 class="bolder-words">Room amenities </h6>
+                                </div>
+                                <div class="">
+                                    {% for amenity in room_amenities %}
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <label class="containerr">
+                                            <input class="checked-inputs room-amenity" type="checkbox">
+                                            <span class="checkmark border"></span>
+                                        </label>
+                                        <span class="mt-3 choose-types">{{amenity.name}}</span>
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-xl-9 col-12 main-col">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="baku-125" style="font-weight: bold;">Baki : 125 hotels was found</h4>
+                    </div>
+                </div>
+                <div class="removed-data">
+                    {% for hotel in hotels %}
+                    <div class="row main-div">
+                        <div class="col-12 ">
+                            <div class="card mb-3 p-3"
+                                style="max-width: 100%; height: 90%;border-color: #5bbaff;box-shadow: 0 0 10px #5bbaff;background-color: #ebf3ff;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4 col-sm-6 col-lg-3 col-12">
+                                        <img class="content-image" src="{{hotel.main_image.url}}" class="card-img"
+                                            alt="...">
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-6 col-12">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-primary mb-1" style="font-weight: bold;">
+                                                {{hotel.name}}</h6>
+                                            <div class="d-flex align-items-center mb-3 ">
+                                                {% get_star_count hotel.rating as stars %}
+                                                {{stars|safe}}
+                                            </div>
+                                            <p class="card-text" style="font-size: 12px;line-height: 18px;">
+                                                {{hotel.short_description}}</p>
+                                            <p class="card-text"><small
+                                                    class="text-muted">{{hotel.name_description}}</small>
+                                            </p>
+                                            <span class="d-sm-block d-md-none" style="font-size: 16px;">Price
+                                                for night
+                                                {{hotel.min_price}}$</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-lg-3 d-none d-md-block col-12">
+                                        <div class="row flex-column justify-content-between ">
+                                            <div class=" d-flex align-items-center justify-content-end p-2 ">
+                                                <div class="d-flex flex-column mr-2" style="line-height:5px;">
+                                                    <h6>Very good</h6>
+                                                    <small>75 Reviews</small>
+                                                </div>
+                                                <div class="rating-count">{{hotel.rating}}</div>
+                                            </div>
+                                            <div class=" d-flex flex-column justify-content-end p-2">
+                                                <span class="text-right" style="font-size: 16px;">Price for night
+                                                    {{hotel.min_price}}$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-sm-3  p-md-2 d-none d-sm-block">
+                                        <div class="row justify-content-end ">
+                                            <a href="{% url 'hotels_app:hotels-single' hotel.slug %}" type="button"
+                                                class="btn btn-danger slugs-anchor w-25"
+                                                style="font-size:14px; color: white;">Reserve</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-sm-3  pb-4 pl-4 d-block d-sm-none ">
+                                        <div class="row  ">
+                                            <a href="{% url 'hotels_app:hotels-single' hotel.slug %}" type="button"
+                                                class="btn btn-danger slugs-anchor w-25"
+                                                style="font-size:14px; color: white;">Reserve</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row mt-5 old-pagi">
+                    <div class="col text-center">
+                        <div class="block-27 d-flex justify-content-center align-items-center">
+                            {% if page_obj.has_previous %}
+                            <a class="prev-icon" style="color: #b0ddf2;"
+                                href="?page={{ page_obj.previous_page_number }}{% if sortBy %}&sortBy={{ sortBy }}{% endif %}">
+                                <i class='fas fa-angle-left previous-icon mr-2' alt="arrow" style='font-size:24px'></i>
+                            </a>
+                            {% endif %}
+                            {% if page_range|length > 1 %}
+                            <div class="page-numbers">
+                                {% for page_number in page_range %}
+                                {% if page_number == page_obj.number %}
+                                <a class="active mr-2">
+                                    <span>{{ page_number }}</span>
+                                </a>
+                                {% else %}
+                                <a class="page mr-2 deactive-page-numbers mb-2"
+                                    style="text-decoration: none;color: rgb(145, 145, 255);"
+                                    href="?page={{ page_number }}{% if sortBy %}&sortBy={{ sortBy }}{% endif %}">
+                                    <span class="number-span">{{ page_number }}</span>
+                                </a>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                            <a class="next-page ml-2" style="color: #b0ddf2;"
+                                href="?page={{ page_obj.next_page_number }}{% if sortBy %}&sortBy={{ sortBy }}{% endif %}">
+                                <i class=' fas fa-angle-right' style='font-size:24px' alt="arrow" class="next-icon"></i>
+
+                            </a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row js-pagination d-flex justify-content-center align-items-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'includes/subscribers.html' %}
+{% endblock %}

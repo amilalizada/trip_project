@@ -1,0 +1,82 @@
+.main-div{
+    background-color: rgb(211, 243, 243) !important;
+}
+.pagi-ul li{
+    text-decoration: none;
+    font-weight: bold;
+    /* background-color: grey; */
+    /* border-radius: 50px; */
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(145, 145, 255);
+    cursor: pointer;
+    margin: 0px 5px;
+}
+.content-image{
+    position: absolute;
+    padding-bottom: 10px;
+}
+.forget-button-div{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    top: -27px;
+    right: -812px;
+    color:white;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(81, 71, 231);
+}
+.forget-button{
+    font-size: 20px;
+}
+.lst{
+    background-color: #eb7a85;
+    color: white;
+    padding: 20px 10px;
+}
+.menu-items{
+    color: white;
+    text-decoration: none !important;
+    padding: 0px 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+a:hover{
+    text-decoration: none;
+    color: none;
+
+}
+.lst:hover{
+    
+    background-color: white;
+    color:#e96d79 ;
+}
+.lst:hover .menu-items{
+    color:  #eb7a85;
+}
+.user-menu{
+    background-color: #e96d79;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(58, 58, 58);
+}
+.forget-button-div-js{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    top: -27px;
+    right: -782px !important;
+    color:white;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(81, 71, 231);
+}

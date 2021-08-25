@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+    .texts{
+        font-family: 'Montserrat', sans-serif;
+        /* font-family: 'Roboto', sans-serif; */
+    }
+    .enter-button:hover{
+        background-color: white;
+        color: #dc3545;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 py-5">
+                <div class="p-3">
+                    <h4 style="font-weight: bold;" >Contact Information</h4>
+                </div>
+                <div class="border p-4 text-left my-3 d-flex align-items-center justify-content-start">
+                    <span class="texts">Organisation name: <span class="text-dark"> {{contactInfo.fullname}} </span></span>
+                </div>
+                <div class="border p-4 text-left my-3 d-flex align-items-center justify-content-start">
+                    <span class="texts">Our email: <span class="text-danger"> {{contactInfo.email}} </span></span>
+                </div>
+                <div class="border p-4 text-left my-3 d-flex align-items-center justify-content-start">
+                    <span class="texts">Our phone number: <span class="text-danger"> {{contactInfo.phone_number}} </span></span>
+                </div>
+                <div class="border p-4 text-left my-3 d-flex align-items-center justify-content-start">
+                    <span class="texts">Our location: <span class="text-danger"> {{contactInfo.location}} </span></span>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 py-2">
+                <form action="{% url 'main:contact-form' %}" class=" p-5 contact-form" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                   <div class="form-group p-2">
+                       {{field}}
+                       {{field.errors}}
+                    </div>
+                    {% endfor %}
+                    <div class="form-group ">
+                        <input type="submit" value="Send Message" class="btn btn-danger py-3 px-5 enter-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+                
+
+            
+
+{% endblock content %}

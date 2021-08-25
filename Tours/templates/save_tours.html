@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/tourspage.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+{% for tour in tours_list %}
+        <div class="tours-cards col-xl-3 col-lg-4 col-md-6 col-12 mb-4 mt-4 m-auto">
+
+            <div class="mt-4 mb-4" style="box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);">
+                <div class="image-div">
+                    <img src="{{tour.main_image.url}}" style="width: 370px; height:200px;" class="card-img-top w-100" alt="...">
+                    <div class="heart">
+                        <a onclick="save_article({{tour.id}})">
+                            <!-- <i class=" fa fa-heart-o" style="font-size:22px"></i> -->
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h1 class="card-title mt-2 mb-2">{{tour.title}}</h1>
+                    <p class="card-text mt-3">With {{tour.name}} extension</p>
+                    <div class="row mt-4 mb-4">
+                        <div class="days col-lg-6">{{tour.trip_time}}</div>
+
+                        <div class="days col-lg-6">
+                            <div class="row">
+                                <div class="col-7 stars-first">
+                                    <div class="stars">
+
+                                        <img class="star" src="{% static 'images/image-2.svg' %}" alt="">
+                                        <img class="star" src="{% static 'images/image-2.svg' %}" alt="">
+                                        <img class="star" src="{% static 'images/image-2.svg' %}" alt="">
+                                        <img class="star" src="{% static 'images/image-3.svg' %}" alt="">
+                                        <img class="star" src="{% static 'images/image-3.svg' %}" alt="">
+
+                                    </div>
+                                </div>
+                                <div class="col-5">160</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="sale">On sale from</p>
+                    <div class="row see">
+                        <!-- <span class="old-price mr-2 ml-3">$1234</span> -->
+                        <span class="sale-price ml-2">${{tour.price}}*</span>
+                        <a class="mr-2" href="{% url 'tours:tour-detail' tour.slug %}">See Tour</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}

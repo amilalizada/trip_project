@@ -1,0 +1,509 @@
+.single-page-background{
+  background: #f2f2f2;
+}
+.single-place-name{
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.place-location {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.place-location span:hover{
+    text-decoration: underline;
+}
+
+.single-page-place-telephone{
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.single-page-place-telephone:hover{
+    text-decoration: underline;
+}
+
+.single-page-place-website{
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.single-page-place-website:hover{
+    text-decoration: underline;
+}
+
+.single-page-place-menu{
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.single-page-place-menu:hover{
+    text-decoration: underline;
+}
+
+.single-page-details{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.place-single-page-info-header{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.place-single-page-info{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.place-single-page-info-background{
+    background-image: url(/media/images/background-filter.png);
+    color: white;
+}
+
+.single-page-information-topic{
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  padding-bottom: 16px;
+}
+
+.single-page-feedback{
+  color: black;
+  font-weight: 700;
+  font-size: 13px;
+  opacity: 0.9;
+  margin-left: 8px;
+}
+.single-page-bar{
+  color: black;
+  font-weight: 700;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.single-page-index{
+  font-size: 14px;
+  font-weight:700;
+}
+
+.rating-info{
+  color: #2c2c2c;
+  font-size: 13px;
+  margin-left: 8px;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.brunch{
+  color: #2c2c2c;
+  font-size: 13px;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.place-container{
+  max-width: 1232px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+.improve-list{
+  font-size: 13px;
+  font-weight:700;
+}
+.improve-list:hover{
+  text-decoration: underline;
+}
+
+.place-location-info{
+  line-height: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 1;
+}
+.place-location-info:hover{
+  text-decoration: underline !important;
+}
+
+.for-border{
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  background: #fff;
+  padding: 24px;
+  height: 100% !important;
+}
+
+.three-reasons{
+  font-size: 24px;
+  line-height: 30px;
+  padding: 15px 0px 18px 0px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.reason{
+  font-size: 20px;  
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.reason-img{
+  width: 140px;
+  height: 140px;
+  object-position: center;
+  object-fit: cover;
+}
+
+
+
+
+.reason-text{
+  margin-bottom: 12px;
+  color: #474747;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  font-weight: 400;
+}
+.reviewer{
+  color: #474747;
+  font-size: 11px;
+  font-weight: 400;
+}
+.highlight{
+  color: #474747;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.for-cursor{
+  cursor: pointer;
+}
+
+.place-website:hover{
+  text-decoration: underline !important;
+}
+
+.place-details{
+  font-size: 24px;
+  line-height: 30px;
+  padding: 15px 0px 18px 0px;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 500;
+  color: #000;
+}
+
+.place-special-topic{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2c2c2c;
+}
+
+.inner-special-topic{
+  padding: 12px 30px 12px 0px;
+  font-size: 13px;
+  color: #474747;
+  line-height: 20px;
+  font-weight: 400;
+}
+.price{
+  padding: 0px 5px 0px 20px;
+}
+.about-place{
+  border-right:1px solid #e0e0e0
+}
+.place-all-reasons{
+  padding: 0px 15px 20px 15px;
+}
+.auto-video{
+  padding: 0px 1px 0px 15px;
+}
+
+.heart-img{
+  background-image: url(/static/images/heart.svg);
+  width: 19px;
+  height: 18px;
+  background-repeat: no-repeat;
+  transition: 0.3s ease all;
+}
+.place-save{
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.save-button:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.save-button:hover > .heart-img{
+  background-image: url(/static/images/red-heart.svg);
+}
+.place-share{
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.save-share-border{
+  border-right: 1px solid #e0e0e0;
+  height: 25px;
+}
+.dotted-border{
+  border-bottom: 1px dotted #e0e0e0;
+}
+.dotted-border:hover{
+  border-bottom: 1px solid black !important;
+}
+.special-font{
+  font-size: 14px;
+  font-weight:400
+}
+.img-info:hover + .open-time{
+  border-bottom: 1px solid black !important;
+}
+.jquery-effect{
+  cursor: pointer;
+}
+.work-hours{
+  min-width: 250px;
+  max-width: 300px;
+  padding-bottom: 5px;
+}
+.hours{
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 6px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+}
+.work-hours-views{
+  font-size: 14px;
+  line-height: 16px;
+  padding-top: 10px;
+  color: #474747;
+  font-weight: 400;
+}
+.table-worktime{
+  padding: 24px;
+  box-shadow: 1px 1px 10px 6px #ededed;
+  position: relative;
+}
+.position-exit-cursor{
+  cursor: pointer;
+  position:absolute;
+  top: 0;
+  right: 10px;
+}
+.table-place-open-time{
+  position:absolute;
+  margin-left: 10px;
+  margin-top: 6px;
+  z-index: 5;
+  background: white;
+}
+.triangle-table{
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  position: absolute;
+  top: -7px;
+  left: 5px;
+}
+.nearby-places{
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nearby-places:hover{
+  text-decoration: underline !important;
+}
+.see-all{
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.same-location{
+  padding: 0px 24px 0px 0px;
+}
+.same-location-image-background{
+    background-position: center;
+  width: 100%;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.1s ease all;
+}
+.same-location-image-background:hover{
+  opacity: 0.9;
+}
+.img1{
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/15/ef/06/24/portion-meat-doner.jpg);
+
+}
+.img2{
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-f/11/52/4e/97/smokey-brunch.jpg);
+
+}
+.img3{
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/12/7f/74/fb/cho-gao-transit.jpg);
+}
+.img4{
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/16/d9/08/9b/transfer-your-taste-buds.jpg);
+}
+.same-location-place-name{
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  font-weight: 400;
+}
+.same-location-place-name:hover{
+  color: #000;
+  text-decoration: none;
+}
+.same-location-review{
+  color: #474747;
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.5;
+}
+.same-location-type{
+  color: #474747;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+.same-location-save-place{
+  background-image: url(/static/images/heart3.svg);
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  transition: 0.3s ease all;
+}
+.save-place-icon{
+  display: inline-block;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  right: 32px;
+}
+.save-place-icon:hover > .same-location-save-place{
+  background-image: url(/static/images/red-heart.svg);
+}
+.img-style{
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+.photos-camera::before{
+  text-decoration: none;
+}
+.photos-camera::before {
+  content: "\e010";
+  display: inline-block;
+font-style: normal;
+font-weight: 400;
+font-variant: normal;
+font-size: inherit;
+line-height: 1;
+font-family: TripAdvisor_Regular !important;
+}
+.all-photos{
+  background: #000000;
+  color: white;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.all-photos:hover{
+  color: white;
+  text-decoration: none;
+}
+.all-photos .fa-camera{
+  margin-left: 12px;
+  margin-right: 8px;
+}
+.all-photos-page{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y:scroll; 
+}
+.close-all-photos{
+  position: fixed;
+  top: 5px;
+  right: 25px;
+  cursor: pointer;
+}
+.land-of-fire img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.mobile-contact-info{
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+@media (max-width:1273px){
+  .reason-img{
+    width: 132px;
+    height: 132px;
+  }
+}
+@media (max-width:991px){
+  .responsive-place-information{
+    padding: 0px 20px;
+  }
+  .same-location-image-background{
+    height: 250px;
+  }
+  .place-container{
+    padding: 0px !important;
+  }
+  .for-border{
+    border-left: none;
+    border-right: none;
+  }
+  .reason{
+    margin-top: 20px;
+  }
+  .price{
+    padding: 0px 5px 20px 5px;
+  }
+  .about-place{
+    border: none;
+  }
+}
+@media (max-width:575px){
+  .auto-video{
+    padding: 0px 15px;
+  }
+  .save-button{
+    margin-right: 10px;
+  }
+  .mobile-contact-info{
+    font-size: 12px;
+  }
+}

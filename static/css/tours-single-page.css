@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+.header-image{
+    background-image: url("https://image.shutterstock.com/image-photo/baku-azerbaijan-july12017-flame-towers-260nw-671164249.jpg");
+    width: 100%;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid red;
+    
+}
+.header-text-div{
+    padding: 282px 30px 0;
+}
+.header-text-div h1{
+    color: #ffffff;
+    text-shadow: 0 0 10px #000000;
+    font-size: 45px;
+    line-height: 1.1;  
+    font-weight: 500;
+}
+.under-header-div{
+    width: 100%;
+    height: 107px;
+    background-color: #ededed;
+    display: flex;
+    align-content: center;
+}
+.under-header-cols{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add-wish i{
+    width: 16px;
+    height: 16px;
+    font-size: 18px !important;
+}
+.add-wish span{
+    color: white;
+}
+.dates{
+    width: 100%;
+    height: 36px;background-color: #00ab99;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dates img{
+    width: 18px;
+    height: 18px;
+}
+.add-wish{
+    width: 100%;
+    height: 36px;background-color: #d8343d;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.svgs{
+    width: 17px; ;
+    height: 16px;
+}
+.route{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+
+}
+li a{
+    font-size: 19px;
+    padding: 5px 15px;
+    color: #454545;
+    background-color: transparent;
+}
+/* li:hover{
+    background-color: #2b3945;
+    color: white;
+} */
+li a:hover{
+    color: white;
+}.
+.start-finish{
+    display: flex;  
+}
+.nowrap{
+    white-space: nowrap;
+}
+ul li{
+    text-decoration: none;
+    /* list-style: none; */
+}
+.scroll-route li{
+    list-style: none;
+}
+.right-first-ul li{
+    list-style: none;
+}
+.right-second-ul li{
+    list-style: none;
+}
+.right-third-ul li{
+    list-style: none;
+}
+.right-four-ul li{
+    list-style: none;
+}
+.li-hoverly:hover{
+    
+    background-color: #2b3945;
+    color: white;
+}
+.tour-rating{
+    width: 20px;
+}
+.meals{
+    border-top: 1px dotted #D2D2D2;
+    border-top-width: 1px;
+    border-top-style: dotted;
+    border-top-color: rgb(210, 210, 210);
+    display: flex;
+    align-items: center;
+    height: 88px;
+}
+.bed{
+    width: 50px;
+    height: 50px;
+}
+.for-sup{
+    display: flex;
+    position: relative;
+}
+.for-sup sup{
+    
+    position: absolute;
+    top: 5px;  
+    left: 60px; 
+}
+.itinerary-plus{
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+.plus-img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.Itenenary{
+    display: flex;
+    justify-content: space-between;
+}
+.card-header{
+    background-color: #ededed
+}
+.collapse-day{
+    color: #45454a;
+}
+.lastone{
+    height: 180px;
+}
+.info-collapse{
+    display: flex;
+    justify-content: flex-end;
+}
+.lef-ul{
+    position: fixed;
+}
+.a-hoverly{
+    display: flex;
+    align-items: center;
+}
+.a-hoverly span{
+    white-space: nowrap;
+    font-size: 16px;
+}
+.plus-img{
+    width: 24px;
+    font-weight: 700;
+    height: 24px;
+    background-color: #2b3945;
+    color: white;
+    border-radius: 50%;
+    padding: 0px 4px 1px 4px;
+}
+.dates-2{
+    background-color: #00ab99;
+    width: 100%;
+    z-index: 2000;
+    height: 50px;
+    display: flex;
+    bottom: 0;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex !important;
+}
+.dates-2 img{
+    width: 18px;
+    height: 18px;
+}
+.dates-2 span{
+    color: white;
+    font-size: 20px;
+
+}
+.inhead-plus-img{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 20px;
+    background-color: #2b3945;
+    color: white;
+    border-radius: 50%;
+    /* padding: 0px 15px 25px 7px; */
+}
+.carousel-inner{
+    height: 350px;
+}
+.Wishlist{
+    text-decoration: none;
+    color: white;
+}
+.Wishlist:hover{
+    text-decoration: none;
+    color: white;
+}

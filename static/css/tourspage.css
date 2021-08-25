@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden !important;
+}
+.tours-cards{
+    border-radius: 10px;
+    box-sizing: border-box;
+    /* box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1); */
+    background-color: #FFFFFF;
+    color: #191919;
+    text-decoration: none;
+    cursor: pointer;
+}
+.card-title{
+    color: #191919;
+    margin-bottom: 8px;
+    font-weight:100px;
+    line-height: 22px;
+    font-family: 'Oswald', sans-serif;
+
+}
+.days{
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    color: #191919;
+    display: flex;
+    justify-content: space-between;
+}
+.old-price{
+    text-decoration: line-through;
+    font-family: 'Oswald', sans-serif;
+}
+.sale-price{
+    color: red;
+    font-family: 'Oswald', sans-serif;
+}
+.up-text{
+    align-items: center;
+    text-align: center;
+}
+.center-text{
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px;
+    margin-bottom: 16px;
+    margin: auto;
+    vertical-align: baseline;
+}
+.stars{
+    display: flex;  
+}
+.stars-first{
+    display: flex;
+    align-items: center;
+}
+.star{
+    width: 14px;
+    height: 14px;
+}
+.my_container{
+    margin: auto;
+}
+.image-div{
+    position: relative;
+}
+.heart{
+    position: absolute;
+    top:5px ;
+    right: 5px;
+    color: white;
+    cursor: pointer;
+}
+.see-all{
+    display: flex;
+    justify-content: center;
+}
+.seeall-button{
+    
+    background-color: #57a197;
+    color: white;
+    border-radius: 20px;
+    width: 126px;
+    height: 40px;
+    border: solid#57a197;
+
+}
+.seeall-button:focus{
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+.seeall-button:hover{
+    border-color: #4e9087;
+    background-color: #4e9087;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.header-image{
+    position: relative;
+    
+}
+.header-text{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    line-height: 61px;
+    font-size: 55px;
+    color: white;
+}
+.header-text h1{
+    line-height: 61px;
+    font-size: 55px;
+}
+.seeall-button-header{
+    font-size: 16px;
+    position: absolute;
+    top:315px;
+    left: 100px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    border: solid white;
+}
+.seeall-button-header:hover{
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;
+}
+.head-image{
+    height: 500px !important;
+}
+@media only screen and (max-width: 1500px) and (min-width: 1200px) {
+    .my_container{
+       
+       width: 1199px;
+    } 
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 960px) {
+    .my_container{
+       
+       width: 960px;
+    }   
+   }
+   @media only screen and (max-width: 959px) and (min-width: 768px) {
+       .my_container{
+           width: 748px;
+       }   
+   }
+   @media only screen and (max-width: 767px) and (min-width: 480px){
+       .my_container {
+           width: 460px;
+       }
+   }
+   @media only screen and (max-width: 479px) and (min-width: 320px){
+       .my_container{
+            width: 300px;
+       }
+    }
+    .card-img-top{
+        height: 200px;
+    }
+    .pagination{
+        display: flex;
+        justify-content: center;
+    }
+    .pagination a:hover{
+        text-decoration: none;
+    }
+    .numbers{
+        color: black;
+    }
+    .numbers:hover{
+        background-color: black;
+        color: white;
+    }
+    .pagination a{
+        color: black;
+    }
+    .circle{
+        border-radius: 50%;
+    }
+    .next-icon{
+        width: 15px;
+        height: 15px;
+    }
+    .previous-icon{
+        width: 15px;
+        height: 15px;
+    }
+    .block-27{
+        display: flex;
+        justify-content: center
+        ;
+    }
+    .page-numbers a{
+        text-decoration: none;
+        color:black;
+    }
+    
+
+    .see{
+        display: flex;
+        justify-content: space-between;
+    }
+    .see a{
+        background-color: red;
+        text-decoration: none;
+        color: white;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        width: 70px;
+        height: 30px;
+        align-items: center;
+    }
+    .active-page{
+        background: #1F1F1F !important;
+        color: #fff !important;
+        border: 1px solid transparent !important;
+        text-align: center !important;
+        display: inline-block !important;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        border-radius: 50% !important;
+    }
+    .page{
+        font-size: 20px !important;
+        cursor: pointer;
+        margin: 2px;
+        color: black !important;
+    }
+    .act-num{
+        cursor: pointer;
+        background-color: white !important;
+        color: black !important;
+        border-radius: 50% !important;
+        border: 1px solid black !important;
+        text-align: center !important;
+        display: inline-block !important;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        border-radius: 50% !important;
+    }
+    .act-num:hover{
+        background-color: black !important;
+        color: white !important;
+        border-radius: 50% !important;
+        border: 1px solid transparent !important;
+        text-align: center !important;
+        display: inline-block !important;
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        border-radius: 50% !important;
+    }
+    .page{
+        background-color: black;
+        color: white
+        text-align: center;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        border: 1px solid #E6E6E6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .page span{
+        color: white;
+    }
+    .page-numbers{
+        display: flex;
+    }
+    .block-27{
+        align-items: center;
+    }

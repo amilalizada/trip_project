@@ -1,0 +1,196 @@
+.star-icon {
+  font-size: 20px;
+}
+.option-title{
+font-weight: bold;
+font-size: 18px;
+}
+.options-div{
+background-color: #b0ddf2;
+}
+
+/* Reviews css */
+
+.user-avatar{
+width: 60px;
+height: 60px;
+}
+.user-data{
+font-size: 14px;
+}
+.line-div{
+position: relative !important;
+height: 4px !important;
+margin-right: 4px !important;
+background: rgb(221, 221, 221) none repeat scroll 0% 0% !important;
+border-radius: 2px !important;
+width: 85% !important;
+}
+.line-span{
+position: absolute !important;
+top: 0px !important;
+left: 0px !important;
+bottom: 0px !important;
+border-radius: 2px !important;
+background: black !important;
+width: 100%;
+}
+.rating-count{
+font-size: 12px;
+font-weight: bold;
+}
+.line-span.rating{
+width: 90% !important;
+}
+.review-rating-count{
+font-weight: bold;
+font-size: 22px;
+}
+.line-under-hotels{
+height: 1px;
+width: 100%;
+background-color: black;
+}
+.nearest-hotels{
+font-size: 26px;
+font-weight: bolder;
+}
+.checked {
+color: orange;
+}
+.nearest-hotel-price{
+
+font-size: 22px;
+}
+.dollar-symbol{
+font-family: 'Raleway', sans-serif;
+color: #363636;
+font-size: 22px;
+line-height: 22px;
+}
+
+
+.rating-count{
+background: #007bff;
+color: #fff;
+display: flex;
+-webkit-box-align: center;
+align-items: center;
+font-size: 16px;
+font-weight: 500;
+-webkit-box-pack: center;
+justify-content: center;
+vertical-align: baseline;
+border-radius: 6px 6px 6px 0;
+height: 36px;
+width: 36px;
+min-width: 32px;
+}
+.nearest-hotel-card{
+  background-color: #ebf3ff;
+}
+.parent-nearest-hotel-card{
+  box-shadow:0 0 10px #5bbaff !important;
+}
+.nearest-hotels-row{
+  margin:auto;
+  /* margin-left: 48px; */
+}
+.title-of-description{
+  font-size: 20px;
+  font-weight: bold;
+}
+.short-description{
+  color: rgb(185, 133, 95);
+  font-weight: bold;
+  font-size: 14px;
+}
+.main-description{
+  text-align: justify;
+}
+.name-of-facility,.fas-icon{
+  color: #008009;
+}
+
+.hp__important_facility_icon *{
+  fill: #008009;
+}
+.most-popular-facilities{
+  font-weight: bold;
+}
+.table-headers{
+  background-color: #4c76b2;
+  color: white;
+  border:aqua;
+}
+.first{
+  width: 40%;
+}
+.second,.third,.forth{
+  width: 20%;
+}
+.underline-after-facilities{
+  height: 2px !important;
+  width: 90%;
+  background-color: rosybrown;
+}
+.titles-for-types{
+padding: 10px;
+
+}
+.facilities-with-logo{
+font-size: 14px;
+color: #008009;
+}
+.room-type{
+ font-weight: bold;
+}
+.bed-types-title{
+font-weight: bold;
+}
+.small-description{
+font-size: 14px;
+font-weight: bold;
+}
+.price-value,.price-count{
+font-size: 20px;
+}
+tbody{
+width: 100%;
+display: block;
+}
+.table-class{
+border: none !important;
+}
+.btn-primary:hover{
+background-color: #0071c2 !important;
+/* padding:0; */
+border: 1px solid rgb(96, 96, 236)  !important;
+}
+.btn.btn-primary:hover{
+background-color: #0071c2 !important;
+color: white !important;
+}
+.line-under-surroundings{
+width: 100%;
+height: 1px;
+background-color: rgb(221, 219, 219);
+}
+.restaurants-nearby,.important-places{
+font-weight: bold;
+
+}
+.names-of-places{
+font-weight: bold;
+font-size: 12px;
+}
+.rest-icon{
+font-size: 22px;
+padding-top: 2px;
+}
+.gallery{
+background-color: azure;
+}
+.pignose-calender{
+background-color:floralwhite;
+}
